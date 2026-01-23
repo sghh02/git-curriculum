@@ -1,0 +1,135 @@
+# 01 環境構築（Sourcetree + GitHub）
+
+## 1. この章のゴール
+- 「提出物の管理」と「バックアップ」のために Git/GitHub を使う理由がわかる。
+- GitHub アカウントを作り、Sourcetree を使ってリポジトリをクローンできる。
+- SSH キーを設定して、認証（ログイン）でつまずきにくくする。
+
+## 2. 概念の説明（図や比喩を使ってわかりやすく）
+- まず安心してほしいこと：Git は「間違えても戻れる仕組み」です。最初に覚えると、その後の課題がずっと楽になります。
+- GitHub は「ネット上の金庫」（提出先＋バックアップ）、Sourcetree は「金庫を操作するリモコン」です。
+
+### 初登場の用語（ここだけ押さえればOK）
+- **リポジトリ**：課題の入れ物（フォルダ＋履歴）。
+- **ローカル**：自分の PC 側。**リモート**：GitHub 側。
+- **クローン（clone）**：GitHub のリポジトリを自分の PC にコピーして、作業できる状態にすること。
+- **SSH**：GitHub（金庫）に入るための「鍵」で認証する方式。
+
+[ここに「ローカル⇔リモート」のイメージ図を挿入]
+
+## 3. 環境構築とクローン手順（Sourcetree）
+この章では「黒い画面（CLI）」をできるだけ使わず、Sourcetree で進めます。
+
+### この章の最短ルート（迷ったらここに戻る）
+1. GitHub アカウントを作る
+2. GitHub でリポジトリを作る
+3. Sourcetree を入れる
+4. SSH キーを作る → GitHub に公開鍵を登録 → Sourcetree に秘密鍵を設定
+5. GitHub の `SSH` URL でクローンする
+
+### 3-1. GitHub アカウント作成
+- GitHub にアクセス → `Sign up`（登録）
+- メール認証まで完了させる
+
+[ここに GitHub のサインアップ画面のスクリーンショットを挿入]
+
+### 3-2. GitHub でリポジトリを作成
+（授業で指定されたリポジトリがある場合は、それを使って OK です）
+
+- GitHub 右上の `+` → `New repository`
+- `Repository name`：例 `git-learning`
+- `Public / Private`：課題の提出ルールに従う（迷ったら先生に確認）
+- 迷ったら `Add a README file` を ON（最初のクローンが楽です）
+- `Create repository`
+
+[ここに GitHub の「New repository」画面のスクリーンショットを挿入]
+
+### 3-3. Sourcetree のインストールと初期設定
+- Sourcetree をインストールして起動
+- 初回セットアップは、分からない項目は無理に触らず進めて OK（後から変更できます）
+
+[ここに Sourcetree 初回セットアップ画面のスクリーンショットを挿入]
+
+### 3-4. 【重要】SSH キーの設定（ここが一番つまずきやすい）
+SSH は「鍵でログインする」仕組みです。ここだけは丁寧に進めましょう。
+
+- **公開鍵（public key）**：GitHub に登録して OK（合鍵みたいなもの）
+- **秘密鍵（private key）**：絶対に外に出さない（本物の鍵）
+
+#### (1) Sourcetree で SSH キーを作る
+- Sourcetree のメニューで `Tools` → `Create SSH Keys...`（または設定画面から「SSH キー作成」）
+- 画面の指示に従って鍵を生成する
+- `.pub` が付くファイルが公開鍵です
+
+[ここに Sourcetree の SSH キー作成導線のスクリーンショットを挿入]
+
+#### (2) GitHub に公開鍵を登録する
+- GitHub 右上アイコン → `Settings`
+- `SSH and GPG keys` → `New SSH key`
+- `Title`：例 `my-laptop`
+- `Key`：公開鍵（`.pub`）の中身を貼り付け → `Add SSH key`
+
+[ここに GitHub の「New SSH key」画面のスクリーンショットを挿入]
+
+#### (3) Sourcetree に秘密鍵を指定する
+- Sourcetree → `Preferences` / `Options`
+- `Authentication` / `SSH` の項目で、秘密鍵ファイルを指定する
+
+[ここに Sourcetree の SSH 設定画面のスクリーンショットを挿入]
+
+### 3-5. GitHub リポジトリを Sourcetree にクローンする
+- GitHub のリポジトリ画面で `Code` → `SSH` を選ぶ → URL をコピー（`git@github.com:...` の形）
+- Sourcetree で `Clone` をクリック
+- `Source Path / URL` に貼り付け
+- `Destination Path`（保存先）を選ぶ
+- `Clone` をクリック
+
+[ここに Sourcetree の「Clone」画面のスクリーンショットを挿入]
+
+### 3-6. クローンできたか確認（ここで迷う人が多い）
+- Sourcetree でリポジトリが左側に追加されている
+- 左のブランチ一覧に `main`（または `master`）が見える
+- 左の `Remotes` に `origin` があり、GitHub の URL が設定されている
+- VS Code でフォルダを開ける
+  - Sourcetree のメニューから `Open in Finder/Explorer` や `Open in External Editor` を探す（表示名は環境で異なります）
+
+[ここに Sourcetree のリポジトリ一覧とブランチ一覧のスクリーンショットを挿入]
+
+### 3-7. （おすすめ）事故を防ぐ：GitHubで main を保護する
+初心者が一番やりがちな事故は「`main` に直接 push してしまう」です。GitHub 側で “ガード” を付けると安心です。
+
+- GitHub のリポジトリ → `Settings`
+- `Branches` → `Add branch protection rule`
+- `Branch name pattern` に `main`
+- `Require a pull request before merging` を ON
+- `Do not allow force pushes` があれば ON
+
+※ `Settings` が見えない場合は権限がない可能性があります。そのときはスキップして OK です。
+
+[ここに GitHub の Branch protection 設定画面のスクリーンショットを挿入]
+
+## 4. よくあるミス・つまずきポイント
+- `https://...` の URL でクローンして、毎回ログインが必要になってしまう → まずは `SSH` をおすすめ。
+- `Permission denied (publickey)` が出る → GitHub に公開鍵を登録したか、Sourcetree が正しい秘密鍵を見ているかを確認。
+- **秘密鍵の中身を貼るのは絶対に NG**（貼るのは `.pub` の公開鍵だけ）。
+
+### プッシュ/クローンできない（認証エラー）チェックリスト
+- GitHub の `Code` → `SSH` の URL（`git@github.com:...`）を使っている？
+- GitHub に公開鍵を登録した？（`Settings` → `SSH and GPG keys`）
+- Sourcetree の設定で「秘密鍵」を指定した？
+- 別の鍵を作り直した場合、GitHub 側も新しい公開鍵に差し替えた？
+- 権限のないリポジトリにアクセスしていない？（URL が本当に自分の課題リポジトリか確認）
+
+## 5. AIに聞いてみよう（質問例）
+- 「Sourcetree の設定で“SSH キー”を指定する場所が見つからない。画面名の候補を教えて」
+- 「公開鍵と秘密鍵の違いを、初心者向けに例えて説明して」
+- 「クローンした後、次に何をすれば“提出できる状態”になる？」
+
+## 6. ハンズオン課題（成果物提出を想定）
+- クローンしたリポジトリを VS Code で開き、`README.md` に自己紹介を2行だけ追記して保存する。
+- 次章で Sourcetree から「ステージング→コミット→プッシュ」を行います（この章では編集までで OK）。
+
+## 7. チェックリスト（理解確認）
+- [ ] GitHub＝金庫、Sourcetree＝リモコン、で説明できる。
+- [ ] 公開鍵と秘密鍵の違いを説明できる。
+- [ ] Sourcetree でリポジトリをクローンできた。

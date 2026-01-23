@@ -7,8 +7,31 @@ const index = JSON.parse(readFileSync(indexPath, "utf-8"));
 
 const errors = [];
 
-for (const unit of index.units ?? []) {
-  for (const lesson of unit.lessons ?? []) {
+const normalizeTitle = (value) =>
+  value
+    .trim()
+    .replace(/^\d+\s+/, "")
+    .replace(/\s+/g, "");
+
+const groups = Array.isArray(index.chapters)
+  ? index.chapters
+  : Array.isArray(index.units)
+    ? index.units
+    : [];
+
+for (const group of groups) {
+  const lessons = Array.isArray(group.items)
+    ? group.items
+    : Array.isArray(group.lessons)
+      ? group.lessons
+      : [];
+
+  for (const lesson of lessons) {
+    if (!lesson?.path || !lesson?.title) {
+      errors.push(`Invalid lesson entry: ${JSON.stringify(lesson)}`);
+      continue;
+    }
+
     const lessonPath = resolve(repoRoot, lesson.path);
     let content = "";
     try {
@@ -19,9 +42,14 @@ for (const unit of index.units ?? []) {
     }
 
     const titleLine = content.split(/\r?\n/).find((line) => line.startsWith("# "));
-    const title = titleLine?.replace(/^#\s+/, "");
-    if (!title || title !== lesson.title) {
-      errors.push(`Title mismatch: ${lesson.path} (index: ${lesson.title}, file: ${title ?? "(missing)"})`);
+    const fileTitle = titleLine?.replace(/^#\s+/, "");
+    if (!fileTitle) {
+      errors.push(`Missing title: ${lesson.path}`);
+      continue;
+    }
+
+    if (normalizeTitle(fileTitle) !== normalizeTitle(lesson.title)) {
+      errors.push(`Title mismatch: ${lesson.path} (index: ${lesson.title}, file: ${fileTitle})`);
     }
   }
 }
