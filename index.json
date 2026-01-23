@@ -74,6 +74,18 @@
           "estimatedMinutes": 40
         }
       ]
+    },
+    {
+      "id": "unit4",
+      "title": "Unit 4: チートシート",
+      "items": [
+        {
+          "id": "sourcetree-cheatsheet",
+          "title": "Sourcetreeチートシート（クリック場所早見表）",
+          "path": "chapters/08-sourcetree-cheatsheet.md",
+          "estimatedMinutes": 15
+        }
+      ]
     }
   ]
 }
