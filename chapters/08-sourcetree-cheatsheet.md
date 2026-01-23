@@ -109,4 +109,11 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 ※秘密鍵・トークン・パスワードは貼りません
 ```
 
+### 6-1. 具体例（このまま質問してOK）
+- 「いま `File Status` です。`Unstaged files` に（___）が出てるけど、`Staged files` は空。コミットまでのクリック順を1→2→3で教えて」
+- 「いま `Push` 画面です。`feature/task1` を送りたい。どこにチェックを入れる？“間違えやすいポイント” も一緒に教えて（スクショあり）」
+- 「GitHub で `New pull request` を開いています。base/compare が不安。スクショを貼るので、正しい組み合わせ（base=`develop` / compare=`feature/...`）になってるか確認して」
+- 「`History` の右クリックで “取り消し” をしたい。`Revert/Reverse commit` ってどれ？プッシュ済みでも安全な方はどっち？」
+- 「Sourcetree が日本語表示で、この教材の `File Status / Pull / Push` が見つからない。スクショから “どれがどれ” か読み替えて」
+
 ※ SSH の秘密鍵・トークン・パスワードは絶対に共有しないでください。

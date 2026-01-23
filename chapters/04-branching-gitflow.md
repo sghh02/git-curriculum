@@ -28,8 +28,11 @@
 
 ## 3. 実際の操作手順（Sourcetree）
 ### 3-0. 事前チェック：`develop` があるか確認
-- Sourcetree 左のブランチ一覧に `develop` があるか確認
-- もし無い場合（初回だけ）:
+- まず `Fetch`（または `Pull`）して、ブランチ一覧を最新にします
+- Sourcetree 左のブランチ一覧に `develop` があるか確認します
+- `develop` が見えないときは、`Remotes` → `origin` の中に **`develop`（例：`origin/develop`）** がないか確認します
+  - もし `origin/develop` があれば：右クリック → `Checkout`（ローカルに `develop` を作って切り替え）
+- `origin/develop` も無い場合（初回だけ）：`main` から `develop` を作って GitHub に送ります
   - `main` を右クリック → `Branch...`
   - ブランチ名に `develop`
   - `Checkout new branch` にチェック → 作成
@@ -105,9 +108,12 @@ PR の作り方は次章で “どこをクリックするか” まで説明し
 スクショ：（ブランチ一覧が見えるもの）
 ```
 
-- 「`main/develop/feature` の役割を、初心者向けにもっと分かりやすく例えて」
-- 「`feature/課題名` の良い命名例をいくつか作って」
-- 「PR を出す前に確認するチェックリストを作って」
+### 5-1. 具体例（このまま質問してOK）
+- 「`3-0` です。`develop` が見えません。左の `Branches` と `Remotes/origin` のスクショを貼るので、`develop` は作るべき？それとも `origin/develop` を checkout する？クリック順で教えて」
+- 「`3-2` です。課題名が（___）なんだけど、`feature/課題名` のブランチ名案を3つ出して（英数字・kebab-case）」
+- 「`main` で作業してしまった。**未コミット/コミット済み** どっちか分からないので、まず確認する場所（Sourcetreeのどこ？）と、その後の安全な戻し方を教えて」
+- 「PRを出す前に、`develop` を最新化できてるか不安。`History` のどこを見れば “古い/新しい” が分かる？」
+- 「マージ後の後片付けで、`feature/task1` は消していい？消すなら “ローカル/リモート” どっちを消すのが安全？」
 
 ## 6. ハンズオン課題（成果物提出を想定）
 - `develop` から `feature/task1` を作成する。
