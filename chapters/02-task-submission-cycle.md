@@ -17,6 +17,8 @@
 - Sourcetree のブランチ一覧で `develop` をダブルクリック（チェックアウト）
 - 上部の `Pull` をクリック（最新化）
 
+※ `develop` が見当たらない場合は、先に `main` から `develop` を作って `Push` します（この章の「模擬課題0」を参照）。
+
 [ここにSourcetreeの「developをチェックアウト→Pull」画面のスクリーンショットを挿入]
 
 ### 1) ブランチ作成：`develop` → `feature/task1`
@@ -55,6 +57,8 @@
 - `compare` を **feature/task1** にする（提出元）
 - `Create pull request` をクリック
 
+※ `develop` が選べない場合は、GitHub 側に `develop` がまだ無い可能性があります。`develop` を `Push` してから再度試してください。
+
 [ここにGitHubの「New pull request」画面のスクリーンショットを挿入]
 
 **PR本文テンプレ（そのまま使ってOK）**
@@ -88,3 +92,97 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 
 ## 5. つまずいたら
 - `main` で作業してしまった／プッシュできない／コンフリクトが出た → 第7章「トラブルシューティング（詰まったらここ）」へ
+
+## 6. 模擬課題（このカリキュラム内で“提出まで完走”する）
+この章は「読む」だけではなく、**実際に PR 提出までやって**体で覚えるのが一番強いです。  
+ここでは練習用リポジトリ（第1章で作った `git-learning` など）を使って進めます。
+
+### 模擬課題0：セットアップ確認（15分）
+**やること**
+- Sourcetree で練習用リポジトリを開く
+- `develop` が無ければ作成して `Push`（GitHub にも `develop` を作る）
+- `develop` をチェックアウトして `Pull` ができることを確認
+
+**合格条件**
+- `origin/develop` が GitHub に存在する
+- Sourcetree で `main` と `develop` が見える
+
+**提出物（先生に出すなら）**
+- GitHub のリポジトリ画面で `develop` が見えるスクショ
+- Sourcetree のブランチ一覧で `main` と `develop` が見えるスクショ
+
+[ここに模擬課題0のスクリーンショット例を挿入]
+
+### 模擬課題1：課題提出リハーサル（PR→マージ→Pull）（30〜45分）
+**ゴール**：`feature/task1` から `develop` に PR を出し、マージ後にローカル `develop` へ反映できる。
+
+**やること**
+1. `develop` をチェックアウト → `Pull`
+2. `develop` から `feature/task1` を作成
+3. VS Code で `README.md` に「自己紹介」か「学習メモ」を追記して保存
+4. Sourcetree でステージング → コミット（例：`task1: READMEに自己紹介を追加`）
+5. `Push`（`feature/task1` を GitHub へ）
+6. GitHub で PR を作成（base=`develop`、compare=`feature/task1`）
+7. PR テンプレの空欄を埋めて提出
+8. PR をマージ（授業ルールに従う：先生がマージする場合は待つ）
+9. ローカルで `develop` をチェックアウト → `Pull`（マージ結果を取り込む）
+
+**合格条件**
+- PR の base が `develop`、compare が `feature/task1`
+- PR 本文に「目的・変更点・確認方法」が書けている
+- マージ後、ローカル `develop` の `History` にマージ結果が見える
+
+**提出物（先生に出すなら）**
+- PR のURL
+- PR が `Merged` になっているスクショ
+- Sourcetree の `History` で、マージ後の履歴が見えるスクショ
+
+[ここに模擬課題1のPR作成〜マージのスクリーンショット例を挿入]
+
+### 模擬課題2：コンフリクト練習（PRでConflictsを出して直す）（45〜60分・上級）
+**ゴール**：コンフリクトを怖がらずに解決し、PR をマージできる。
+
+**やること（ポイント：AとBを“同じ元（develop）から”作る）**
+0. `develop` をチェックアウト → `Pull`
+1. `develop` に練習用ファイルを作る（1回だけ）
+   - `practice.md` を作成して次の1行を書いて保存：`LINE: original`
+   - ステージング → コミット（例：`chore: add practice file`）→ `Push`（developへ）
+2. `develop` から `feature/conflict-a` を作成
+   - `practice.md` の `LINE:` を `LINE: from A` に変更 → コミット → プッシュ
+   - GitHub で PR（A）を作成（base=`develop`）※まだマージしない
+3. `develop`（まだ更新しない）から `feature/conflict-b` を作成
+   - `practice.md` の `LINE:` を `LINE: from B` に変更 → コミット → プッシュ
+   - GitHub で PR（B）を作成（base=`develop`）
+4. GitHub で PR（A）を先にマージ
+5. PR（B）に `Conflicts` が出たら、次で解決
+   - ローカルで `develop` をチェックアウト → `Pull`（最新化）
+   - `feature/conflict-b` をチェックアウト
+   - Sourcetree の `Merge` で `develop` を取り込む
+   - コンフリクトが出たら VS Code で `practice.md` を整える（第6章を見ながら）
+   - 解決コミット → `Push`（feature/conflict-bへ）
+6. PR（B）がマージ可能になったらマージ
+7. ローカル `develop` を `Pull` して完了
+
+**合格条件**
+- PR（B）で `Conflicts` が出た状態から、自分で解決して `Merged` まで到達できた
+- 解決コミットが `feature/conflict-b` に積まれている（履歴で確認できる）
+
+**提出物（先生に出すなら）**
+- PR（A）とPR（B）のURL
+- PR（B）でコンフリクトが出たスクショ（出た瞬間）
+- 解決後にマージできたスクショ
+
+[ここに模擬課題2の「Conflicts表示」スクリーンショット例を挿入]
+
+## 7. AIに質問するテンプレ（このページを開いたままコピペOK）
+```md
+初心者です。いま「02 Gitflowによる課題提出サイクル」を開いています。
+
+やりたいこと：（例）feature/task1からdevelopへPR提出したい
+今いるブランチ：（Sourcetreeで太字/チェックのブランチ名）
+詰まっているステップ：（0〜5のどこか。例：3) Push）
+直前に押したボタン：1)  2)  3)
+起きていること：（例）PRのbaseが選べない / Pushで失敗する
+エラー全文：（あればそのまま）
+スクショ：（あれば添付）
+```

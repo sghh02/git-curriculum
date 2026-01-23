@@ -1,8 +1,8 @@
 # 01 環境構築（Sourcetree + GitHub）
 
 ## 1. この章のゴール
-- 「提出物の管理」と「バックアップ」のために Git/GitHub を使う理由がわかる。
-- GitHub アカウントを作り、Sourcetree を使ってリポジトリをクローンできる。
+- GitHub / Sourcetree / VS Code を準備して、課題提出のスタート地点に立てる。
+- GitHub アカウントを作り、Sourcetree を使ってリポジトリを SSH でクローンできる。
 - SSH キーを設定して、認証（ログイン）でつまずきにくくする。
 
 ## 2. 概念の説明（図や比喩を使ってわかりやすく）
@@ -50,11 +50,35 @@
 
 [ここに Sourcetree 初回セットアップ画面のスクリーンショットを挿入]
 
+### 3-3.5 【重要】コミットに必要な「名前・メール」を設定する（初回だけ）
+初回にここを飛ばすと、コミット時にエラーが出て止まりやすいです。先に設定しておくのが最強です。
+
+- Sourcetree → `Preferences` / `Options`（設定）を開く
+- `General`（一般）などのタブで `Default user information`（ユーザー情報）を探す
+- 次を入力して保存
+  - `Name`：あなたの名前（本名でもハンドルネームでもOK。履歴に残ります）
+  - `Email`：GitHub に登録しているメール（または GitHub の no-reply メールでもOK）
+
+[ここに Sourcetree の「Default user information（Name/Email）」画面のスクリーンショットを挿入]
+
+### 3-3.6 （おすすめ）VS Code を差分/マージツールに設定する
+コンフリクト解決（第6章）で、VS Code が開くようにしておくと安心です。
+
+- Sourcetree → `Preferences` / `Options`
+- `Diff` / `Merge` の項目を探す
+- `External Diff Tool` / `External Merge Tool` に `Visual Studio Code` を選ぶ（選べない場合はスキップでOK）
+
+[ここに Sourcetree の Diff/Merge 設定画面のスクリーンショットを挿入]
+
 ### 3-4. 【重要】SSH キーの設定（ここが一番つまずきやすい）
 SSH は「鍵でログインする」仕組みです。ここだけは丁寧に進めましょう。
 
 - **公開鍵（public key）**：GitHub に登録して OK（合鍵みたいなもの）
 - **秘密鍵（private key）**：絶対に外に出さない（本物の鍵）
+
+※ Windows 環境だと Sourcetree の SSH クライアントが `PuTTY/Plink` になっていることがあります。  
+その場合は鍵が `.ppk` 形式になる/変換が必要になることがあるので、迷ったら次を確認してください。
+- Sourcetree の `Options` → `SSH Client` で `OpenSSH` を選べるなら選ぶ（選べない場合はそのままでOK）
 
 #### (1) Sourcetree で SSH キーを作る
 - Sourcetree のメニューで `Tools` → `Create SSH Keys...`（または設定画面から「SSH キー作成」）
@@ -121,6 +145,38 @@ SSH は「鍵でログインする」仕組みです。ここだけは丁寧に�
 - 権限のないリポジトリにアクセスしていない？（URL が本当に自分の課題リポジトリか確認）
 
 ## 5. AIに聞いてみよう（質問例）
+この章で詰まりやすいのは「SSH（鍵）」と「クローン」です。  
+このページを開いたまま、下のテンプレをコピペして質問してみてください。
+
+**SSH/認証エラー用テンプレ（おすすめ）**
+```md
+初心者です。いま「01 環境構築（Sourcetree + GitHub）」を開いています。
+
+詰まっている手順：（例）3-4(2) GitHubに公開鍵を登録
+やりたいこと：（例）SourcetreeからSSHでクローン/プッシュしたい
+起きていること：（例）PushでPermission denied (publickey)が出る
+エラー全文：（そのまま貼る）
+
+確認したこと：
+- GitHubのSSH Keysに公開鍵(.pub)を登録した：はい/いいえ
+- Sourcetreeで秘密鍵を指定した：はい/いいえ
+- クローンURLがgit@github.com:...になっている：はい/いいえ
+
+スクショ：（あれば添付）
+※秘密鍵の中身・トークン・パスワードは貼りません
+```
+
+**クローンできない用テンプレ**
+```md
+初心者です。いま「01 環境構築（Sourcetree + GitHub）」を開いています。
+
+詰まっている手順：（例）3-5 クローン
+貼り付けたURL：（git@github.com:... の形だけ。中身はそのままでもOK）
+Destination Path：（どこに保存しようとしているか）
+起きていること：（画面の表示/エラー）
+スクショ：（あれば添付）
+```
+
 - 「Sourcetree の設定で“SSH キー”を指定する場所が見つからない。画面名の候補を教えて」
 - 「公開鍵と秘密鍵の違いを、初心者向けに例えて説明して」
 - 「クローンした後、次に何をすれば“提出できる状態”になる？」

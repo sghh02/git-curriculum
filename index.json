@@ -11,7 +11,7 @@
           "id": "intro",
           "title": "なぜプログラミングの前にGitをやるのか",
           "path": "chapters/00-introduction.md",
-          "estimatedMinutes": 20
+          "estimatedMinutes": 25
         }
       ]
     },
@@ -23,7 +23,7 @@
           "id": "setup",
           "title": "環境構築（Sourcetree + GitHub）",
           "path": "chapters/01-setup-sourcetree-github.md",
-          "estimatedMinutes": 60
+          "estimatedMinutes": 90
         }
       ]
     },
@@ -35,13 +35,13 @@
           "id": "task-submission-cycle",
           "title": "Gitflowによる課題提出サイクル",
           "path": "chapters/02-task-submission-cycle.md",
-          "estimatedMinutes": 60
+          "estimatedMinutes": 120
         },
         {
           "id": "daily-operations",
           "title": "add / commit / push とログの読み方",
           "path": "chapters/03-daily-operations.md",
-          "estimatedMinutes": 70
+          "estimatedMinutes": 90
         },
         {
           "id": "branching",
@@ -53,7 +53,7 @@
           "id": "pull-request",
           "title": "PRの作成とセルフレビュー",
           "path": "chapters/05-pull-request.md",
-          "estimatedMinutes": 60
+          "estimatedMinutes": 70
         }
       ]
     },
@@ -65,13 +65,13 @@
           "id": "conflict-resolution",
           "title": "コンフリクトの理解と解決",
           "path": "chapters/06-conflict-resolution.md",
-          "estimatedMinutes": 60
+          "estimatedMinutes": 80
         },
         {
           "id": "troubleshooting",
           "title": "トラブルシューティング（詰まったらここ）",
           "path": "chapters/07-troubleshooting.md",
-          "estimatedMinutes": 40
+          "estimatedMinutes": 45
         }
       ]
     },
