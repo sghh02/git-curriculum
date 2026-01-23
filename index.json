@@ -1,87 +1,75 @@
 {
-  "title": "git-curriculum",
+  "curriculumId": "git-curriculum",
+  "title": "Git / GitHub 基礎",
   "description": "成果物提出に直結する Git / GitHub 学習カリキュラム",
-  "estimatedMinutes": 460,
-  "units": [
+  "chapters": [
     {
-      "id": "unit-0",
-      "title": "学習の進め方とAI活用",
-      "description": "AIを使ってGitの理解を深める学習スタイルを確立する",
-      "estimatedMinutes": 30,
-      "lessons": [
+      "id": "unit0",
+      "title": "Unit 0: 学習の進め方とAI活用",
+      "items": [
         {
-          "id": "lesson-0",
-          "title": "00 AIと一緒に学ぶGit/GitHub",
+          "id": "ai-learning",
+          "title": "AIと一緒に学ぶGit/GitHub",
           "path": "chapters/00-ai-learning.md",
           "estimatedMinutes": 30
         }
       ]
     },
     {
-      "id": "unit-1",
-      "title": "Git / GitHub 基礎",
-      "description": "役割の違いとリポジトリの基本を理解する",
-      "estimatedMinutes": 80,
-      "lessons": [
+      "id": "unit1",
+      "title": "Unit 1: Git / GitHub 基礎",
+      "items": [
         {
-          "id": "lesson-1",
-          "title": "01 GitとGitHubの基礎とリポジトリ作成",
+          "id": "git-basics",
+          "title": "GitとGitHubの基礎とリポジトリ作成",
           "path": "chapters/01-git-github-basics.md",
           "estimatedMinutes": 80
         }
       ]
     },
     {
-      "id": "unit-2",
-      "title": "日常操作",
-      "description": "commitを中心にした日々の操作を身につける",
-      "estimatedMinutes": 90,
-      "lessons": [
+      "id": "unit2",
+      "title": "Unit 2: 日常操作",
+      "items": [
         {
-          "id": "lesson-2",
-          "title": "02 add/commit/pushとログの読み方",
+          "id": "daily-operations",
+          "title": "add / commit / push とログの読み方",
           "path": "chapters/02-daily-operations.md",
           "estimatedMinutes": 90
         }
       ]
     },
     {
-      "id": "unit-3",
-      "title": "シンプルGitFlow運用",
-      "description": "main / develop / feature で安全に進める",
-      "estimatedMinutes": 90,
-      "lessons": [
+      "id": "unit3",
+      "title": "Unit 3: シンプルGitFlow運用",
+      "items": [
         {
-          "id": "lesson-3",
-          "title": "03 ブランチ運用とマージ",
+          "id": "branching",
+          "title": "ブランチ運用とマージ",
           "path": "chapters/03-branching-gitflow.md",
           "estimatedMinutes": 90
         }
       ]
     },
     {
-      "id": "unit-4",
-      "title": "Pull Request",
-      "description": "PRを使った提出とレビューの基本を学ぶ",
-      "estimatedMinutes": 80,
-      "lessons": [
+      "id": "unit4",
+      "title": "Unit 4: Pull Request",
+      "items": [
         {
-          "id": "lesson-4",
-          "title": "04 PRの作成とセルフレビュー",
+          "id": "pull-request",
+          "title": "PRの作成とセルフレビュー",
           "path": "chapters/04-pull-request.md",
           "estimatedMinutes": 80
         }
       ]
     },
     {
-      "id": "unit-5",
-      "title": "コンフリクト解決",
-      "description": "実際に衝突を起こして安全に解決する",
-      "estimatedMinutes": 90,
-      "lessons": [
+      "id": "unit5",
+      "title": "Unit 5: コンフリクト解決",
+      "items": [
         {
-          "id": "lesson-5",
-          "title": "05 コンフリクトの理解と解決",
+          "id": "conflict-resolution",
+          "title": "コンフリクトの理解と解決",
           "path": "chapters/05-conflict-resolution.md",
           "estimatedMinutes": 90
         }
