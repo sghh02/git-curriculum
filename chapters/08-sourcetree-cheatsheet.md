@@ -11,8 +11,10 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 **Sourcetree（例）**
 - `File Status` → 「ファイルステータス」
 - `History` → 「履歴」
+- `Commit` → 「コミット」
 - `Branch` → 「ブランチ」
 - `Merge` → 「マージ」
+- `Fetch` → 「フェッチ」
 - `Pull` → 「プル」
 - `Push` → 「プッシュ」
 - `Remotes` → 「リモート」
@@ -22,6 +24,12 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 - `New pull request` → 「新しいプルリクエスト」
 - `Files changed` → 「ファイルの変更」
 - `Settings` → 「設定」
+
+### 画面の見方（スクショ不要）
+- **左サイドバー**：リポジトリ一覧／`Branches`（ブランチ）／`Remotes`（リモート）があります
+- **上部ツールバー**：`Pull / Push / Branch / Merge / Commit` など「操作ボタン」が並びます
+- **中央のタブ**：`File Status`（変更とコミット）／`History`（履歴）をよく使います
+- **迷ったら順番**：1) 今いるブランチ → 2) `File Status` の `Unstaged/Staged` → 3) `Pull/Push` のどっちが必要か
 
 ## 2. まず最初に見る場所（事故防止の最重要ポイント）
 ### 2-1. 今いるブランチ（作業台）
@@ -105,15 +113,15 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 直前に押したボタン（クリック順）：1)  2)  3)
 起きていること：（例）Commitできない / Pushで失敗 / featureが見えない
 エラー全文：（あればそのまま）
-スクショ：（今見ている画面）
+画面の情報：（今見ている画面の表示を文字で。スクショは任意）
 ※秘密鍵・トークン・パスワードは貼りません
 ```
 
 ### 6-1. 具体例（このまま質問してOK）
 - 「いま `File Status` です。`Unstaged files` に（___）が出てるけど、`Staged files` は空。コミットまでのクリック順を1→2→3で教えて」
-- 「いま `Push` 画面です。`feature/task1` を送りたい。どこにチェックを入れる？“間違えやすいポイント” も一緒に教えて（スクショあり）」
-- 「GitHub で `New pull request` を開いています。base/compare が不安。スクショを貼るので、正しい組み合わせ（base=`develop` / compare=`feature/...`）になってるか確認して」
+- 「いま `Push` 画面です。`feature/task1` を送りたい。どこにチェックを入れる？“間違えやすいポイント” も一緒に教えて（スクショは任意）」
+- 「GitHub で `New pull request` を開いています。base/compare が `base=___` / `compare=___` になってる。正しい？間違ってたらどこを直す？」
 - 「`History` の右クリックで “取り消し” をしたい。`Revert/Reverse commit` ってどれ？プッシュ済みでも安全な方はどっち？」
-- 「Sourcetree が日本語表示で、この教材の `File Status / Pull / Push` が見つからない。スクショから “どれがどれ” か読み替えて」
+- 「Sourcetree が日本語表示で、この教材の `File Status / Pull / Push` が見つからない。画面に見えているボタン名を列挙するので “どれがどれ” か読み替えて」
 
 ※ SSH の秘密鍵・トークン・パスワードは絶対に共有しないでください。

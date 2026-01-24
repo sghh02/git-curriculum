@@ -79,8 +79,9 @@ GitHub の PR 画面で `This branch has conflicts` のように表示された�
 対象ブランチ：develop / feature/___
 衝突しているファイル：（例）practice.md
 やりたいこと：（例）両方の変更を残して整えたい / Aを残してBを捨てたい
-スクショ：（SourcetreeのConflicts表示、VS Codeのマージ画面、PRのConflicts表示）
+画面の情報：（どの画面で何が表示されているか。スクショは任意）
 もし貼れるなら：衝突部分のテキスト（秘密情報なし）
+※秘密鍵・トークン・パスワードは貼りません
 ```
 
 ### 5-1. 具体例（このまま質問してOK）

@@ -31,7 +31,7 @@ feature/課題名（あなたの机） → PR → develop（みんなの作業�
 
 ## 3. 実際の操作手順（Sourcetree）
 ### 3-0. 事前チェック：`develop` があるか確認
-- まず `Fetch`（または `Pull`）して、ブランチ一覧を最新にします
+- まず `Fetch`（情報更新だけ）または `Pull`（取り込み＋反映）して、ブランチ一覧を最新にします
 - Sourcetree 左のブランチ一覧に `develop` があるか確認します
 - `develop` が見えないときは、`Remotes` → `origin` の中に **`develop`（例：`origin/develop`）** がないか確認します
   - もし `origin/develop` があれば：右クリック → `Checkout`（ローカルに `develop` を作って切り替え）
@@ -110,11 +110,12 @@ PR の作り方は次章で “どこをクリックするか” まで説明し
 いま見えているブランチ：（main/develop/feature... がSourcetreeに見えるか）
 直前にやった操作（クリック順）：1)  2)  3)
 起きていること：（例）featureが作れない / PRが作れない / mainにコミットした
-スクショ：（ブランチ一覧が見えるもの）
+画面の情報：（ブランチ一覧に見えている名前を文字で。スクショは任意）
+※秘密鍵・トークン・パスワードは貼りません
 ```
 
 ### 5-1. 具体例（このまま質問してOK）
-- 「`3-0` です。`develop` が見えません。左の `Branches` と `Remotes/origin` のスクショを貼るので、`develop` は作るべき？それとも `origin/develop` を checkout する？クリック順で教えて」
+- 「`3-0` です。`develop` が見えません。`Branches` と `Remotes/origin` に見えている名前を文字で書くので、`develop` は作るべき？それとも `origin/develop` を checkout する？クリック順で教えて（スクショは任意）」
 - 「`3-2` です。課題名が（___）なんだけど、`feature/課題名` のブランチ名案を3つ出して（英数字・kebab-case）」
 - 「`main` で作業してしまった。**未コミット/コミット済み** どっちか分からないので、まず確認する場所（Sourcetreeのどこ？）と、その後の安全な戻し方を教えて」
 - 「PRを出す前に、`develop` を最新化できてるか不安。`History` のどこを見れば “古い/新しい” が分かる？」
