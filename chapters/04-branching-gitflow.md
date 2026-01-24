@@ -19,7 +19,7 @@
 - `develop`：みんなの作業を集める作業台
 - `feature/...`：あなた専用の机
 
-**文字だけの図（スクショ不要）**
+**文字だけの図**
 ```text
 feature/課題名（あなたの机） → PR → develop（みんなの作業台） →（必要に応じて）main（完成品）
 ```
@@ -41,7 +41,7 @@ feature/課題名（あなたの机） → PR → develop（みんなの作業�
   - `Checkout new branch` にチェック → 作成
   - `Push` で `develop` を GitHub に送る
 
-目印（スクショ不要）：
+目印：
 - `Branches` と `Remotes` は Sourcetree 左のサイドバーにあります
 - `Branch...` はブランチ名（例：`main`）を右クリックすると出てきます
 
@@ -55,7 +55,7 @@ feature/課題名（あなたの机） → PR → develop（みんなの作業�
 - `Checkout new branch` にチェック（作成後、そのまま feature に切り替える）
 - `Create Branch` / `OK`
 
-目印（スクショ不要）：上部ツールバーの `Branch` を押すとダイアログが開きます。`Branch name` と `Checkout new branch` を確認します。
+目印：上部ツールバーの `Branch` を押すとダイアログが開きます。`Branch name` と `Checkout new branch` を確認します。
 
 ### 3-3. feature で作業 → コミット → プッシュ
 - VS Code で編集して保存
@@ -110,12 +110,12 @@ PR の作り方は次章で “どこをクリックするか” まで説明し
 いま見えているブランチ：（main/develop/feature... がSourcetreeに見えるか）
 直前にやった操作（クリック順）：1)  2)  3)
 起きていること：（例）featureが作れない / PRが作れない / mainにコミットした
-画面の情報：（ブランチ一覧に見えている名前を文字で。スクショは任意）
+画面の表示：（ブランチ一覧に見えている名前を文字で）
 ※秘密鍵・トークン・パスワードは貼りません
 ```
 
 ### 5-1. 具体例（このまま質問してOK）
-- 「`3-0` です。`develop` が見えません。`Branches` と `Remotes/origin` に見えている名前を文字で書くので、`develop` は作るべき？それとも `origin/develop` を checkout する？クリック順で教えて（スクショは任意）」
+- 「`3-0` です。`develop` が見えません。`Branches` と `Remotes/origin` に見えている名前を文字で書くので、`develop` は作るべき？それとも `origin/develop` を checkout する？クリック順で教えて」
 - 「`3-2` です。課題名が（___）なんだけど、`feature/課題名` のブランチ名案を3つ出して（英数字・kebab-case）」
 - 「`main` で作業してしまった。**未コミット/コミット済み** どっちか分からないので、まず確認する場所（Sourcetreeのどこ？）と、その後の安全な戻し方を教えて」
 - 「PRを出す前に、`develop` を最新化できてるか不安。`History` のどこを見れば “古い/新しい” が分かる？」

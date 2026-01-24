@@ -23,7 +23,7 @@
 - `Conflicts` の表示が出る
 - `File Status` に赤いアイコンのファイルが並ぶ
 
-目印（スクショ不要）：`File Status` を開くと、`Conflicts`（または赤い表示）のファイル一覧が出ます。ここに出ているファイルが「今解決が必要なもの」です。
+目印：`File Status` を開くと、`Conflicts`（または赤い表示）のファイル一覧が出ます。ここに出ているファイルが「今解決が必要なもの」です。
 
 ### 3-3. 解決する（VS Codeで編集）
 - Sourcetree の `File Status` で、衝突しているファイルをクリック
@@ -34,7 +34,7 @@
 - `Current` は「いまチェックアウトしているブランチ（あなた側）」、`Incoming` は「取り込み元のブランチ（例：develop側）」です
 - 「最終的に残したい文章」になるように整える（両方必要なら両方残して OK）
 - 保存する
-目印（スクショ不要）：VS Code の衝突箇所の近くに `Accept Current/Incoming`（または `Accept Current Change` など）ボタンが出ることがあります。出ない場合は、マーカー（`<<<<<<` など）を手で消して文章を整えればOKです。
+目印：VS Code の衝突箇所の近くに `Accept Current/Incoming`（または `Accept Current Change` など）ボタンが出ることがあります。出ない場合は、マーカー（`<<<<<<` など）を手で消して文章を整えればOKです。
 
 ### 3-4. “解決済み” にしてコミットする（Sourcetree）
 - Sourcetree に戻る
@@ -61,7 +61,7 @@ GitHub の PR 画面で `This branch has conflicts` のように表示された�
 4) `feature` をプッシュ
 - `Push` して GitHub に反映
 - PR 画面を更新して、`Able to merge`（または同等の表示）になればOK
-目印（スクショ不要）：GitHub の PR 画面の「マージ」エリアに `This branch has conflicts`（または同等の表示）が出ます。解決して push すると `Able to merge` に戻ります。
+目印：GitHub の PR 画面の「マージ」エリアに `This branch has conflicts`（または同等の表示）が出ます。解決して push すると `Able to merge` に戻ります。
 
 ## 4. よくあるミス・つまずきポイント
 - コンフリクトマーカー（`<<<<<<` など）を残したままコミットしてしまう → コミット前にファイルを必ず開いて確認。
@@ -79,7 +79,7 @@ GitHub の PR 画面で `This branch has conflicts` のように表示された�
 対象ブランチ：develop / feature/___
 衝突しているファイル：（例）practice.md
 やりたいこと：（例）両方の変更を残して整えたい / Aを残してBを捨てたい
-画面の情報：（どの画面で何が表示されているか。スクショは任意）
+画面の表示：（どの画面で何が表示されているか）
 もし貼れるなら：衝突部分のテキスト（秘密情報なし）
 ※秘密鍵・トークン・パスワードは貼りません
 ```

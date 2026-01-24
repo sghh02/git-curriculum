@@ -7,9 +7,9 @@
 ## 2. まず最初に見る3点セット（1分でできる）
 1. **今いるブランチ**：Sourcetree 左のブランチ一覧で太字/チェックのもの
 2. **未コミットの変更**：`File Status` が空か？ `Unstaged/Staged` に何か出ているか？
-3. **エラー文の全文**：短くしないでそのまま控える（スクショでもOK）
+3. **エラー文の全文**：短くしないでそのまま控える（コピーできなければ書き写す）
 
-目印（スクショ不要）：
+目印：
 - 「今いるブランチ」＝左サイドバー `Branches` の太字/チェック
 - 「未コミットの変更」＝上部タブ `File Status` の `Unstaged/Staged` に何か出ているか
 
@@ -29,7 +29,7 @@
 - まず保険：`main` を右クリック → `Branch...` → `backup/main-mistake` のような名前でブランチを作る
 - そのコミット地点から `feature/task1` を作って作業を続ける
 - `main` を元に戻す（Reset など）は強い操作なので、授業ルールに合わせて先生に確認するのがおすすめです
-目印（スクショ不要）：`main` の行を右クリック → `Branch...` を選ぶと、退避用ブランチ（`backup/...`）が作れます。
+目印：`main` の行を右クリック → `Branch...` を選ぶと、退避用ブランチ（`backup/...`）が作れます。
 
 ## 4. コミットできない（名前/メールが未設定）
 よくある表示：`Please tell me who you are.` / `unable to auto-detect email address`
@@ -41,7 +41,7 @@
 - `Name` と `Email` を入力して保存
 
 ※ 詳しい場所は第1章（環境構築）の「3-3.5」を見ればOKです。
-目印（スクショ不要）：`Preferences/Options` の中の `Default user information`（または「ユーザー情報」）に `Name/Email` の入力欄があります。
+目印：`Preferences/Options` の中の `Default user information`（または「ユーザー情報」）に `Name/Email` の入力欄があります。
 
 ## 5. プッシュできない（認証エラー）チェックリスト
 よくある表示：`Permission denied (publickey)` / `Authentication failed`
@@ -50,7 +50,7 @@
 - GitHub の `Code` → `SSH` の URL（`git@github.com:...`）を使っている？
 - GitHub に **公開鍵（.pub）** を登録した？（`Settings` → `SSH and GPG keys`）
 - Sourcetree の設定で **秘密鍵** を指定した？
-目印（スクショ不要）：GitHub 右上の自分アイコン → `Settings` → 左メニューの `SSH and GPG keys` に公開鍵を追加します。
+目印：GitHub 右上の自分アイコン → `Settings` → 左メニューの `SSH and GPG keys` に公開鍵を追加します。
 
 ### 5-2. それでもダメなとき
 - 別の鍵を作り直した場合、GitHub 側も新しい公開鍵に差し替えた？
@@ -82,7 +82,7 @@
 - `feature/task1` を **プッシュしていない** 可能性が高いです
   - Sourcetree で `feature/task1` をチェックアウト → `Push`
 - PR の `base` が `develop` になっているか確認
-目印（スクショ不要）：GitHub の `Code` タブで、左上あたりのブランチ切り替え（通常 `main` と表示）を開くとブランチ一覧が見られます。
+目印：GitHub の `Code` タブで、左上あたりのブランチ切り替え（通常 `main` と表示）を開くとブランチ一覧が見られます。
 
 ## 8. コンフリクトが起きた（Sourcetreeでの見え方と考え方）
 **コンフリクト**＝同じ場所を別々の変更が書き換えて、Git が自動で決められない状態です。悪いことではありません。
@@ -111,8 +111,8 @@
 どこで詰まった：Sourcetree / GitHub / VS Code
 直前に押したボタン（クリック順）：1)  2)  3)
 起きていること：（例）mainで作業した / Pushで認証エラー / PRでConflictsが出た
-エラー全文：（あればそのまま。スクショでもOK）
-画面の情報：（ブランチ一覧 / File Status / Push画面 / PR画面。スクショは任意）
+エラー全文：（画面に出たメッセージをそのまま）
+画面の表示：（ブランチ一覧 / File Status / Push画面 / PR画面 など、今見えている文字をそのまま）
 
 すでに確認したこと：（例）認証エラーのチェックリストは全部確認した
 ※秘密鍵・トークン・パスワードは貼りません
@@ -126,4 +126,4 @@
 - 「`6-1. 初回Pushでupstreamが無い` です。`no upstream branch`（または同等の表示）が出ました。いまのブランチは（___）。SourcetreeのPush画面で、どこにチェックを入れて何を押せばいい？」
 - 「`3. mainで作業` してしまった。未コミット/コミット済みの見分け方と、いちばん安全な戻し方を “まず確認→次の操作” の順で教えて」
 - 「PRが作れない。GitHubに `feature/...` が見えない。Sourcetreeで確認する順番（ブランチ/Push/Remotes）を短く教えて」
-- 「コンフリクトが出た。表示されている内容（エラー文や衝突部分）を書くので、“どっちを残すか” の判断の考え方と、Sourcetree→VS Code→Sourcetree の手順を確認して（スクショは任意）」
+- 「コンフリクトが出た。表示されている内容（エラー文や衝突部分）を書くので、“どっちを残すか” の判断の考え方と、Sourcetree→VS Code→Sourcetree の手順を確認して」
