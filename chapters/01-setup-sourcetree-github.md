@@ -15,16 +15,6 @@
 - **クローン（clone）**：GitHub のリポジトリを自分の PC にコピーして、作業できる状態にすること。
 - **SSH**：GitHub（金庫）に入るための「鍵」で認証する方式。
 
-**文字だけの図**
-```text
-GitHub（リモート）＝ネット上の金庫（提出先）
-   ↑ Push（送る）
-   ↓ Pull（取り込む）
-あなたのPC（ローカル）
-   ├ VS Code：編集
-   └ Sourcetree：branch / commit / push / pull をクリックで操作
-```
-
 ## 3. 環境構築とクローン手順（Sourcetree）
 この章では「黒い画面（CLI）」をできるだけ使わず、Sourcetree で進めます。
 
