@@ -19,7 +19,10 @@
 - `develop`：みんなの作業を集める作業台
 - `feature/...`：あなた専用の机
 
-[ここに「main / develop / feature」のイメージ図を挿入]
+**文字だけの図（スクショ不要）**
+```text
+feature/課題名（あなたの机） → PR → develop（みんなの作業台） →（必要に応じて）main（完成品）
+```
 
 ### ブランチ名のコツ（迷ったらこのルール）
 - 形式：`feature/課題名`（例：`feature/task1`）
@@ -38,7 +41,9 @@
   - `Checkout new branch` にチェック → 作成
   - `Push` で `develop` を GitHub に送る
 
-[ここに Sourcetree のブランチ一覧と「Branch...」画面のスクリーンショットを挿入]
+目印（スクショ不要）：
+- `Branches` と `Remotes` は Sourcetree 左のサイドバーにあります
+- `Branch...` はブランチ名（例：`main`）を右クリックすると出てきます
 
 ### 3-1. 作業を始める前に：`develop` を最新化
 - `develop` をダブルクリック（チェックアウト＝そのブランチに切り替えること）
@@ -50,7 +55,7 @@
 - `Checkout new branch` にチェック（作成後、そのまま feature に切り替える）
 - `Create Branch` / `OK`
 
-[ここに Sourcetree のブランチ作成ダイアログのスクリーンショットを挿入]
+目印（スクショ不要）：上部ツールバーの `Branch` を押すとダイアログが開きます。`Branch name` と `Checkout new branch` を確認します。
 
 ### 3-3. feature で作業 → コミット → プッシュ
 - VS Code で編集して保存

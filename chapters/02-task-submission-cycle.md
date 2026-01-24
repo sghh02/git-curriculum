@@ -18,16 +18,16 @@
 - 上部の `Pull` をクリック（最新化）
 
 ※ `develop` が見当たらない場合は、先に `main` から `develop` を作って `Push` します（この章の「模擬課題0」を参照）。
-
-[ここにSourcetreeの「developをチェックアウト→Pull」画面のスクリーンショットを挿入]
+目印（スクショ不要）：
+- `develop` は Sourcetree 左の `Branches` に出ます（太字/チェックが付いたら “今いるブランチ”）
+- `Pull` は Sourcetree 上部のツールバーにあります
 
 ### 1) ブランチ作成：`develop` → `feature/task1`
 - `develop` を選んだ状態で、上部の `Branch` をクリック
 - ブランチ名に `feature/task1` を入力
 - `Checkout new branch` にチェック（作成後に切り替える）
 - `Create Branch` / `OK`
-
-[ここにSourcetreeのブランチ作成ダイアログのスクリーンショットを挿入]
+目印（スクショ不要）：`Branch` を押すと「新しいブランチ」ダイアログが出ます。`Branch name` の入力欄と `Checkout new branch` のチェックを確認します。
 
 ### 2) 作業と保存：VS Codeで編集 → ステージング → コミット
 **VS Code（編集）**
@@ -39,15 +39,13 @@
 - 右側の `Stage`（＋/チェック）を押して `Staged files` に移す
 - コミットメッセージを書く（例：`task1: READMEに自己紹介を追加`）
 - `Commit` をクリック
-
-[ここにSourcetreeの「File Status（Unstaged/Staged）」画面のスクリーンショットを挿入]
+目印（スクショ不要）：`File Status` 画面に `Unstaged files / Staged files` があり、コミットメッセージ入力欄が上部に出ます。
 
 ### 3) 同期：GitHubへプッシュ
 - 上部の `Push` をクリック
 - `feature/task1` にチェックが入っていることを確認
 - `Push` をクリック
-
-[ここにSourcetreeの「Push」画面のスクリーンショットを挿入]
+目印（スクショ不要）：`Push` ダイアログで “送るブランチ” にチェックを入れます（`feature/task1` が正しいか必ず確認）。
 
 ### 4) 提出：GitHubで `feature` → `develop` のPull Requestを作る
 - GitHubでリポジトリを開く
@@ -58,8 +56,7 @@
 - `Create pull request` をクリック
 
 ※ `develop` が選べない場合は、GitHub 側に `develop` がまだ無い可能性があります。`develop` を `Push` してから再度試してください。
-
-[ここにGitHubの「New pull request」画面のスクリーンショットを挿入]
+目印（スクショ不要）：PR作成画面の上部に `base`（取り込み先）と `compare`（提出元）のドロップダウンがあります（左が base、右が compare）。
 
 **PR本文テンプレ（そのまま使ってOK）**
 ```md
@@ -81,8 +78,7 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 
 （余裕があれば）後片付け：
 - `feature/task1` を右クリック → `Delete`（ローカルブランチ削除）
-
-[ここにSourcetreeの「developへPull」画面のスクリーンショットを挿入]
+目印（スクショ不要）：左の `develop` をダブルクリックで切り替えたあと、上部ツールバーの `Pull` を押します。
 
 ## 4. 提出前チェックリスト（不安なときはこれだけ）
 - [ ] 今いるブランチが `feature/...` になっている（`develop` や `main` ではない）
@@ -108,10 +104,8 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 - Sourcetree で `main` と `develop` が見える
 
 **提出物（先生に出すなら）**
-- GitHub のリポジトリ画面で `develop` が見えるスクショ
-- Sourcetree のブランチ一覧で `main` と `develop` が見えるスクショ
-
-[ここに模擬課題0のスクリーンショット例を挿入]
+- GitHub の `develop` ブランチURL（URLに `/tree/develop` が含まれていればOK）
+- Sourcetree で「今いるブランチ」が `develop` になっていること（ブランチ名を文字で報告）
 
 ### 模擬課題1：課題提出リハーサル（PR→マージ→Pull）（30〜45分）
 **ゴール**：`feature/task1` から `develop` に PR を出し、マージ後にローカル `develop` へ反映できる。
@@ -134,10 +128,8 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 
 **提出物（先生に出すなら）**
 - PR のURL
-- PR が `Merged` になっているスクショ
-- Sourcetree の `History` で、マージ後の履歴が見えるスクショ
-
-[ここに模擬課題1のPR作成〜マージのスクリーンショット例を挿入]
+- PR が `Merged` になっていること（PR画面の `Merged` 表示を確認）
+- ローカル `develop` の最新コミットメッセージ（Sourcetree `History` の一番上を1行で報告）
 
 ### 模擬課題2：コンフリクト練習（PRでConflictsを出して直す）（45〜60分・上級）
 **ゴール**：コンフリクトを怖がらずに解決し、PR をマージできる。
@@ -169,10 +161,8 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 
 **提出物（先生に出すなら）**
 - PR（A）とPR（B）のURL
-- PR（B）でコンフリクトが出たスクショ（出た瞬間）
-- 解決後にマージできたスクショ
-
-[ここに模擬課題2の「Conflicts表示」スクリーンショット例を挿入]
+- PR（B）で追加した「解決コミット」のメッセージ（例：`Resolve conflict in practice.md`）
+- PR（B）が最終的に `Merged` になったこと
 
 ## 7. AIに質問するテンプレ（このページを開いたままコピペOK）
 ```md

@@ -15,7 +15,15 @@
 - **クローン（clone）**：GitHub のリポジトリを自分の PC にコピーして、作業できる状態にすること。
 - **SSH**：GitHub（金庫）に入るための「鍵」で認証する方式。
 
-[ここに「ローカル⇔リモート」のイメージ図を挿入]
+**文字だけの図（スクショ不要）**
+```text
+GitHub（リモート）＝ネット上の金庫（提出先）
+   ↑ Push（送る）
+   ↓ Pull（取り込む）
+あなたのPC（ローカル）
+   ├ VS Code：編集
+   └ Sourcetree：branch / commit / push / pull をクリックで操作
+```
 
 ## 3. 環境構築とクローン手順（Sourcetree）
 この章では「黒い画面（CLI）」をできるだけ使わず、Sourcetree で進めます。
@@ -31,8 +39,6 @@
 - GitHub にアクセス → `Sign up`（登録）
 - メール認証まで完了させる
 
-[ここに GitHub のサインアップ画面のスクリーンショットを挿入]
-
 ### 3-2. GitHub でリポジトリを作成
 （授業で指定されたリポジトリがある場合は、それを使って OK です）
 
@@ -42,13 +48,9 @@
 - 迷ったら `Add a README file` を ON（最初のクローンが楽です）
 - `Create repository`
 
-[ここに GitHub の「New repository」画面のスクリーンショットを挿入]
-
 ### 3-3. Sourcetree のインストールと初期設定
 - Sourcetree をインストールして起動
 - 初回セットアップは、分からない項目は無理に触らず進めて OK（後から変更できます）
-
-[ここに Sourcetree 初回セットアップ画面のスクリーンショットを挿入]
 
 ### 3-3.5 【重要】コミットに必要な「名前・メール」を設定する（初回だけ）
 初回にここを飛ばすと、コミット時にエラーが出て止まりやすいです。先に設定しておくのが最強です。
@@ -59,16 +61,12 @@
   - `Name`：あなたの名前（本名でもハンドルネームでもOK。履歴に残ります）
   - `Email`：GitHub に登録しているメール（または GitHub の no-reply メールでもOK）
 
-[ここに Sourcetree の「Default user information（Name/Email）」画面のスクリーンショットを挿入]
-
 ### 3-3.6 （おすすめ）VS Code を差分/マージツールに設定する
 コンフリクト解決（第6章）で、VS Code が開くようにしておくと安心です。
 
 - Sourcetree → `Preferences` / `Options`
 - `Diff` / `Merge` の項目を探す
 - `External Diff Tool` / `External Merge Tool` に `Visual Studio Code` を選ぶ（選べない場合はスキップでOK）
-
-[ここに Sourcetree の Diff/Merge 設定画面のスクリーンショットを挿入]
 
 ### 3-4. 【重要】SSH キーの設定（ここが一番つまずきやすい）
 SSH は「鍵でログインする」仕組みです。ここだけは丁寧に進めましょう。
@@ -85,21 +83,18 @@ SSH は「鍵でログインする」仕組みです。ここだけは丁寧に�
 - 画面の指示に従って鍵を生成する
 - `.pub` が付くファイルが公開鍵です
 
-[ここに Sourcetree の SSH キー作成導線のスクリーンショットを挿入]
-
 #### (2) GitHub に公開鍵を登録する
 - GitHub 右上アイコン → `Settings`
 - `SSH and GPG keys` → `New SSH key`
 - `Title`：例 `my-laptop`
 - `Key`：公開鍵（`.pub`）の中身を貼り付け → `Add SSH key`
 
-[ここに GitHub の「New SSH key」画面のスクリーンショットを挿入]
-
 #### (3) Sourcetree に秘密鍵を指定する
 - Sourcetree → `Preferences` / `Options`
-- `Authentication` / `SSH` の項目で、秘密鍵ファイルを指定する
-
-[ここに Sourcetree の SSH 設定画面のスクリーンショットを挿入]
+- `Authentication`（または `Accounts`）タブを探す
+- `SSH key` / `SSH Key` / `Key` の入力欄の `...` / `Browse...` を押して、**秘密鍵（`.pub` ではない方）** を選ぶ
+  - Windows で `PuTTY/Plink` の場合は、鍵が `.ppk` のことがあります（環境の指示に従えばOK）
+- 保存して閉じる
 
 ### 3-5. GitHub リポジトリを Sourcetree にクローンする
 - GitHub のリポジトリ画面で `Code` → `SSH` を選ぶ → URL をコピー（`git@github.com:...` の形）
@@ -108,7 +103,7 @@ SSH は「鍵でログインする」仕組みです。ここだけは丁寧に�
 - `Destination Path`（保存先）を選ぶ
 - `Clone` をクリック
 
-[ここに Sourcetree の「Clone」画面のスクリーンショットを挿入]
+※ `Clone` が見当たらないときは、`File` → `Clone/New...` を探してください（表示名は環境で少し違います）。
 
 ### 3-6. クローンできたか確認（ここで迷う人が多い）
 - Sourcetree でリポジトリが左側に追加されている
@@ -116,8 +111,9 @@ SSH は「鍵でログインする」仕組みです。ここだけは丁寧に�
 - 左の `Remotes` に `origin` があり、GitHub の URL が設定されている
 - VS Code でフォルダを開ける
   - Sourcetree のメニューから `Open in Finder/Explorer` や `Open in External Editor` を探す（表示名は環境で異なります）
-
-[ここに Sourcetree のリポジトリ一覧とブランチ一覧のスクリーンショットを挿入]
+確認のコツ（スクショ不要）：
+- Sourcetree 左側に「リポジトリ一覧」が出ていればOK（見えない場合は、画面左のサイドバーを広げてみてください）
+- そのリポジトリを選ぶと、左側に `Branches` と `Remotes` が出ます（`origin` があれば GitHub とつながっています）
 
 ### 3-7. （おすすめ）事故を防ぐ：GitHubで main を保護する
 初心者が一番やりがちな事故は「`main` に直接 push してしまう」です。GitHub 側で “ガード” を付けると安心です。
@@ -129,8 +125,6 @@ SSH は「鍵でログインする」仕組みです。ここだけは丁寧に�
 - `Do not allow force pushes` があれば ON
 
 ※ `Settings` が見えない場合は権限がない可能性があります。そのときはスキップして OK です。
-
-[ここに GitHub の Branch protection 設定画面のスクリーンショットを挿入]
 
 ## 4. よくあるミス・つまずきポイント
 - `https://...` の URL でクローンして、毎回ログインが必要になってしまう → まずは `SSH` をおすすめ。

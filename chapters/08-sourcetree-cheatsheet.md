@@ -28,14 +28,14 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 - Sourcetree 左のブランチ一覧で、**太字 / チェックマーク** のものが「今いるブランチ」です
 - 課題作業中は基本 `feature/...` にいるのが正解です
 
-[ここにSourcetreeの「現在のブランチが分かる場所」のスクリーンショットを挿入]
+目印（スクショ不要）：左サイドバーの `Branches` に並ぶブランチ名のうち、太字/チェックの行が「今いるブランチ」です。
 
 ### 2-2. 変更の状態（未ステージ／ステージ済み）
 - `File Status` を開く
 - `Unstaged files`：まだコミットに入っていない変更
 - `Staged files`：コミットに入る予定の変更（最終確認ここ！）
 
-[ここにSourcetreeの「File Status（Unstaged/Staged）」画面のスクリーンショットを挿入]
+目印（スクショ不要）：上部タブ `File Status` を開くと `Unstaged files / Staged files` が見えます。
 
 ## 3. 課題提出の5ステップ（最短で思い出す）
 1. `develop` をチェックアウト → `Pull`（最新化）
@@ -91,7 +91,7 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 - 差分を見る：PR の `Files changed`
 - ブランチ一覧：`Code` タブ → ブランチ切り替えドロップダウン
 
-[ここにGitHubの「Pull requests」画面のスクリーンショットを挿入]
+目印（スクショ不要）：GitHub の上部メニューに `Pull requests` があり、`New pull request` ボタンから作成できます。
 
 ## 6. 相談テンプレ（最短で助けてもらう）
 このページを開いたまま AI に質問すると、AI は「チートシート（どこをクリックするか）」の文脈込みで答えられます。

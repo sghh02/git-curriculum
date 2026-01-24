@@ -9,7 +9,9 @@
 2. **未コミットの変更**：`File Status` が空か？ `Unstaged/Staged` に何か出ているか？
 3. **エラー文の全文**：短くしないでそのまま控える（スクショでもOK）
 
-[ここにSourcetreeの「現在のブランチ」「File Status」が分かる画面のスクリーンショットを挿入]
+目印（スクショ不要）：
+- 「今いるブランチ」＝左サイドバー `Branches` の太字/チェック
+- 「未コミットの変更」＝上部タブ `File Status` の `Unstaged/Staged` に何か出ているか
 
 ## 3. ブランチを間違えて `main` で作業してしまった
 まず安心してください。よくあるミスで、ちゃんと戻せます。
@@ -27,8 +29,7 @@
 - まず保険：`main` を右クリック → `Branch...` → `backup/main-mistake` のような名前でブランチを作る
 - そのコミット地点から `feature/task1` を作って作業を続ける
 - `main` を元に戻す（Reset など）は強い操作なので、授業ルールに合わせて先生に確認するのがおすすめです
-
-[ここにSourcetreeの「mainからBranchで退避する」画面のスクリーンショットを挿入]
+目印（スクショ不要）：`main` の行を右クリック → `Branch...` を選ぶと、退避用ブランチ（`backup/...`）が作れます。
 
 ## 4. コミットできない（名前/メールが未設定）
 よくある表示：`Please tell me who you are.` / `unable to auto-detect email address`
@@ -40,8 +41,7 @@
 - `Name` と `Email` を入力して保存
 
 ※ 詳しい場所は第1章（環境構築）の「3-3.5」を見ればOKです。
-
-[ここにSourcetreeの「Default user information（Name/Email）」画面のスクリーンショットを挿入]
+目印（スクショ不要）：`Preferences/Options` の中の `Default user information`（または「ユーザー情報」）に `Name/Email` の入力欄があります。
 
 ## 5. プッシュできない（認証エラー）チェックリスト
 よくある表示：`Permission denied (publickey)` / `Authentication failed`
@@ -50,8 +50,7 @@
 - GitHub の `Code` → `SSH` の URL（`git@github.com:...`）を使っている？
 - GitHub に **公開鍵（.pub）** を登録した？（`Settings` → `SSH and GPG keys`）
 - Sourcetree の設定で **秘密鍵** を指定した？
-
-[ここにGitHubの「SSH and GPG keys」画面のスクリーンショットを挿入]
+目印（スクショ不要）：GitHub 右上の自分アイコン → `Settings` → 左メニューの `SSH and GPG keys` に公開鍵を追加します。
 
 ### 5-2. それでもダメなとき
 - 別の鍵を作り直した場合、GitHub 側も新しい公開鍵に差し替えた？
@@ -73,8 +72,7 @@
 - `feature/task1` を **プッシュしていない** 可能性が高いです
   - Sourcetree で `feature/task1` をチェックアウト → `Push`
 - PR の `base` が `develop` になっているか確認
-
-[ここにGitHubでブランチ一覧を確認している画面のスクリーンショットを挿入]
+目印（スクショ不要）：GitHub の `Code` タブで、左上あたりのブランチ切り替え（通常 `main` と表示）を開くとブランチ一覧が見られます。
 
 ## 8. コンフリクトが起きた（Sourcetreeでの見え方と考え方）
 **コンフリクト**＝同じ場所を別々の変更が書き換えて、Git が自動で決められない状態です。悪いことではありません。
