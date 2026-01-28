@@ -187,7 +187,20 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 ```
 
 ### 具体例（このまま質問してOK）
-- 「いま `1) ブランチ作成` です。`develop` を選んで `Branch` を押した後、どこに `feature/task1` を入れる？チェックすべき項目も教えて」
-- 「いま `4) PR作成` です。表示されている base/compare は `base=___` / `compare=___`。正しい？間違っていたらどこを直す？」
-- 「模擬課題1のPR本文を作って。目的/変更点/確認方法に分けて、初心者でも短く分かる文章にして」
-- 「模擬課題2で PR(B) に `Conflicts` が出た。次にSourcetreeで押すボタンを順番に教えて（CLIは使わないで）」
+```text
+「いま `1) ブランチ作成` です。`develop` を選んで `Branch` を押した後、どこに `feature/task1` を入れる？チェックすべき項目も教えて」
+「いま `4) PR作成` です。表示されている base/compare は `base=___` / `compare=___`。正しい？間違っていたらどこを直す？」
+「模擬課題1のPR本文を作って。目的/変更点/確認方法に分けて、初心者でも短く分かる文章にして」
+「模擬課題2で PR(B) に `Conflicts` が出た。次にSourcetreeで押すボタンを順番に教えて（CLIは使わないで）」
+```
+
+---
+
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記のハンズオン課題を完了する
+2. GitHub で `feature/02-task-submission-cycle` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入

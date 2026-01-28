@@ -11,7 +11,8 @@
           "id": "intro",
           "title": "なぜプログラミングの前にGitをやるのか",
           "path": "chapters/00-introduction.md",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 25,
+          "hasAssignment": true
         }
       ]
     },
@@ -23,7 +24,8 @@
           "id": "setup",
           "title": "環境構築（Sourcetree + GitHub）",
           "path": "chapters/01-setup-sourcetree-github.md",
-          "estimatedMinutes": 90
+          "estimatedMinutes": 90,
+          "hasAssignment": false
         }
       ]
     },
@@ -35,25 +37,29 @@
           "id": "task-submission-cycle",
           "title": "Gitflowによる課題提出サイクル",
           "path": "chapters/02-task-submission-cycle.md",
-          "estimatedMinutes": 120
+          "estimatedMinutes": 120,
+          "hasAssignment": true
         },
         {
           "id": "daily-operations",
           "title": "add / commit / push とログの読み方",
           "path": "chapters/03-daily-operations.md",
-          "estimatedMinutes": 90
+          "estimatedMinutes": 90,
+          "hasAssignment": true
         },
         {
           "id": "branching",
           "title": "ブランチ運用とマージ",
           "path": "chapters/04-branching-gitflow.md",
-          "estimatedMinutes": 60
+          "estimatedMinutes": 60,
+          "hasAssignment": true
         },
         {
           "id": "pull-request",
           "title": "PRの作成とセルフレビュー",
           "path": "chapters/05-pull-request.md",
-          "estimatedMinutes": 70
+          "estimatedMinutes": 70,
+          "hasAssignment": true
         }
       ]
     },
@@ -65,13 +71,15 @@
           "id": "conflict-resolution",
           "title": "コンフリクトの理解と解決",
           "path": "chapters/06-conflict-resolution.md",
-          "estimatedMinutes": 80
+          "estimatedMinutes": 80,
+          "hasAssignment": true
         },
         {
           "id": "troubleshooting",
           "title": "トラブルシューティング（詰まったらここ）",
           "path": "chapters/07-troubleshooting.md",
-          "estimatedMinutes": 45
+          "estimatedMinutes": 45,
+          "hasAssignment": false
         }
       ]
     },
@@ -83,7 +91,8 @@
           "id": "sourcetree-cheatsheet",
           "title": "Sourcetreeチートシート（クリック場所早見表）",
           "path": "chapters/08-sourcetree-cheatsheet.md",
-          "estimatedMinutes": 15
+          "estimatedMinutes": 15,
+          "hasAssignment": false
         }
       ]
     }
