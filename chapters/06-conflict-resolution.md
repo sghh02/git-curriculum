@@ -85,11 +85,13 @@ GitHub の PR 画面で `This branch has conflicts` のように表示された�
 ```
 
 ### 5-1. 具体例（このまま質問してOK）
-- 「`3-5 PRでConflicts` のパターンです。PRで `This branch has conflicts` と出ました。**CLIなし**で、`feature` に `develop` を取り込むクリック順を教えて（Sourcetreeの画面名つきで）」
-- 「VS Code のマージ画面で `Accept Current / Accept Incoming` が出ています。いま私は（feature/developどっち）をチェックアウト中。どれを押すべきか判断の考え方を教えて」
-- 「この衝突部分のテキストを貼るので、最終的にどう整えるのが自然？“残す案” を1つ作って（理由も短く）」
-- 「解決したつもりなのに Sourcetree の `Conflicts` が消えない。`Mark Resolved` の場所と、次にやること（ステージ→コミット）を確認して」
-- 「コンフリクトマーカー（`<<<<<<` など）を消したか不安。コミット前にチェックすべき “3つの確認” を教えて」
+```text
+「`3-5 PRでConflicts` のパターンです。PRで `This branch has conflicts` と出ました。**CLIなし**で、`feature` に `develop` を取り込むクリック順を教えて（Sourcetreeの画面名つきで）」
+「VS Code のマージ画面で `Accept Current / Accept Incoming` が出ています。いま私は（feature/developどっち）をチェックアウト中。どれを押すべきか判断の考え方を教えて」
+「この衝突部分のテキストを貼るので、最終的にどう整えるのが自然？“残す案” を1つ作って（理由も短く）」
+「解決したつもりなのに Sourcetree の `Conflicts` が消えない。`Mark Resolved` の場所と、次にやること（ステージ→コミット）を確認して」
+「コンフリクトマーカー（`<<<<<<` など）を消したか不安。コミット前にチェックすべき “3つの確認” を教えて」
+```
 
 ## 6. ハンズオン課題（成果物提出を想定）
 - 第2章の「模擬課題2（コンフリクト練習）」を実施し、PRでConflictsが出た状態から解決してマージする。
@@ -101,3 +103,14 @@ GitHub の PR 画面で `This branch has conflicts` のように表示された�
 - [ ] コンフリクトが起きる理由を説明できる。
 - [ ] Sourcetree でコンフリクトの状態を見分けられる。
 - [ ] VS Code で解決してコミットまでできる。
+
+---
+
+## 課題提出
+
+この章には提出課題があります。
+
+1. 上記のハンズオン課題を完了する
+2. GitHub で `feature/06-conflict-resolution` ブランチを作成し、PRを作成
+3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
+4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
