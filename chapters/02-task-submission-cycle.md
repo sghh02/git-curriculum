@@ -7,6 +7,8 @@
 >
 > まだの場合は、先に Unit 1 を完了してから戻ってきてください。
 
+> 提出ブランチ：`feature/02-task-submission-cycle`（PRのbase：`develop`）
+
 ## 1. この章のゴール
 - `develop` から `feature/task1` を作り、課題提出（PR）までを一通りできる。
 - 「どこをクリックするか」を見ながら、Sourcetree で迷わず操作できる。
