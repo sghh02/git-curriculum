@@ -1,5 +1,7 @@
 # 04 ブランチ運用とマージ
 
+> 提出ブランチ：`feature/04-branching-gitflow`（PRのbase：`main`）
+
 ## 1. この章のゴール
 - Gitflow（簡易版）の `main / develop / feature/課題名` の役割を説明できる。
 - `develop` から `feature/task1` を作り、Sourcetree で安全に作業できる。

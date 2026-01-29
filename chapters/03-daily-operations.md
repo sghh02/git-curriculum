@@ -1,5 +1,7 @@
 # 03 add/commit/pushとログの読み方
 
+> 提出ブランチ：`feature/03-daily-operations`（PRのbase：`main`）
+
 ## 1. この章のゴール
 - Sourcetree で「ステージング → コミット → プッシュ」まで迷わずできる。
 - 変更履歴（ログ）を見て「いつ・何をしたか」を説明できる。

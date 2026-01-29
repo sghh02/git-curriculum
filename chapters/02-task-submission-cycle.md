@@ -1,5 +1,7 @@
 # 02 Gitflowによる課題提出サイクル
 
+> 提出ブランチ：`feature/02-task-submission-cycle`（PRのbase：`main`）
+
 ## 1. この章のゴール
 - `develop` から `feature/task1` を作り、課題提出（PR）までを一通りできる。
 - 「どこをクリックするか」を見ながら、Sourcetree で迷わず操作できる。

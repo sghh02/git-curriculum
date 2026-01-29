@@ -11,7 +11,7 @@
 - 
 
 ## チェック（提出前の最終確認）
-- [ ] PR の取り込み先（base）が `develop` になっている
+- [ ] PR の取り込み先（base）が `main` になっている
 - [ ] 作業ブランチが `feature/...` になっている（`main` で作業していない）
 - [ ] 不要ファイル（例：`.env`、個人情報、巨大ファイル）が含まれていない
 - [ ] `node scripts/validate-index.mjs` が `Validation passed.` になる
