@@ -1,4 +1,4 @@
-# 03 add/commit/pushとログの読み方
+# add/commit/pushとログの読み方
 
 ## 1. この章のゴール
 - Sourcetree で「ステージング → コミット → プッシュ」まで迷わずできる。

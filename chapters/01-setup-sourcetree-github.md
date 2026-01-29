@@ -1,4 +1,4 @@
-# 01 環境構築（Sourcetree + GitHub）
+# 環境構築（Sourcetree + GitHub）
 
 ## 1. この章のゴール
 - GitHub / Sourcetree / VS Code を準備して、課題提出のスタート地点に立てる。
