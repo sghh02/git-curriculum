@@ -1,6 +1,6 @@
 # 05 PRの作成とセルフレビュー
 
-> 提出ブランチ：`feature/05-pull-request`（PRのbase：`main`）
+> 提出ブランチ：`feature/05-pull-request`（PRのbase：`develop`）
 
 ## 1. この章のゴール
 - `feature/課題名` から `develop` へ PR（Pull Request）を作成できる。

@@ -1,6 +1,6 @@
 # 03 add/commit/pushとログの読み方
 
-> 提出ブランチ：`feature/03-daily-operations`（PRのbase：`main`）
+> 提出ブランチ：`feature/03-daily-operations`（PRのbase：`develop`）
 
 ## 1. この章のゴール
 - Sourcetree で「ステージング → コミット → プッシュ」まで迷わずできる。

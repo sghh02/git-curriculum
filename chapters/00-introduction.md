@@ -1,6 +1,6 @@
 # 00 なぜプログラミングの前にGitをやるのか
 
-> 提出ブランチ：`feature/00-introduction`（PRのbase：`main`）
+> 提出ブランチ：`feature/00-introduction`（PRのbase：`develop`）
 
 ## 1. この章のゴール
 - 「提出物の管理」と「バックアップ」のために Git/GitHub を使う理由がわかる。

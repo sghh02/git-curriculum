@@ -1,6 +1,6 @@
 # 06 コンフリクトの理解と解決
 
-> 提出ブランチ：`feature/06-conflict-resolution`（PRのbase：`main`）
+> 提出ブランチ：`feature/06-conflict-resolution`（PRのbase：`develop`）
 
 ## 1. この章のゴール
 - コンフリクト（衝突）が起きる理由を、怖がらずに説明できる。
