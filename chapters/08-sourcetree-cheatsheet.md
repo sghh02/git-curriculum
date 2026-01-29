@@ -102,29 +102,23 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 目印：GitHub の上部メニューに `Pull requests` があり、`New pull request` ボタンから作成できます。
 
 ## 6. 相談テンプレ（最短で助けてもらう）
-このページを開いたまま AI に質問すると、AI は「チートシート（どこをクリックするか）」の文脈込みで答えられます。
+AIは今開いているページを自動で把握しています。状況だけ伝えればOKです。
 
 ```md
-初心者です。いま「08 Sourcetreeチートシート（クリック場所早見表）」を開いています。
-
 目的：（例）feature/task1をdevelopへPR提出したい
 今いるブランチ：（Sourcetreeで太字/チェックのブランチ名）
 見ている画面：File Status / History / Push / Pull / Branch / GitHub PR
-直前に押したボタン（クリック順）：1)  2)  3)
 起きていること：（例）Commitできない / Pushで失敗 / featureが見えない
 エラー全文：（あればそのまま）
-画面の表示：（今見ている画面の文字をそのまま）
-※秘密鍵・トークン・パスワードは貼りません
 ```
 
 ### 6-1. 具体例（このまま質問してOK）
-- 「いま `File Status` です。`Unstaged files` に（___）が出てるけど、`Staged files` は空。コミットまでのクリック順を1→2→3で教えて」
-- 「いま `Push` 画面です。`feature/task1` を送りたい。どこにチェックを入れる？“間違えやすいポイント” も一緒に教えて」
-- 「GitHub で `New pull request` を開いています。base/compare が `base=___` / `compare=___` になってる。正しい？間違ってたらどこを直す？」
-- 「`History` の右クリックで “取り消し” をしたい。`Revert/Reverse commit` ってどれ？プッシュ済みでも安全な方はどっち？」
-- 「Sourcetree が日本語表示で、この教材の `File Status / Pull / Push` が見つからない。画面に見えているボタン名を列挙するので “どれがどれ” か読み替えて」
+- 「`File Status` で `Unstaged files` に（___）が出てるけど、`Staged files` は空。コミットまでのクリック順を教えて」
+- 「`Push` 画面で `feature/task1` を送りたい。どこにチェックを入れる？」
+- 「GitHub の PR 画面で base/compare が `base=___` / `compare=___` になってる。正しい？」
+- 「`History` の右クリックで取り消したい。`Revert` ってどれ？」
 
-※ SSH の秘密鍵・トークン・パスワードは絶対に共有しないでください。
+※ パスワードやトークンは絶対に共有しないでください。
 
 ---
 
