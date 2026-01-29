@@ -12,7 +12,7 @@
           "title": "なぜプログラミングの前にGitをやるのか",
           "path": "chapters/00-introduction.md",
           "estimatedMinutes": 25,
-          "hasAssignment": true
+          "hasAssignment": false
         }
       ]
     },
