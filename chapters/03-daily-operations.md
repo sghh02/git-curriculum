@@ -1,4 +1,4 @@
-# add/commit/pushとログの読み方
+# add / commit / push とログの読み方
 
 > 提出ブランチ：`feature/03-daily-operations`（PRのbase：`develop`）
 
