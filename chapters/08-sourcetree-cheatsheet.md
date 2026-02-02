@@ -47,7 +47,7 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 
 ## 3. 課題提出の5ステップ（最短で思い出す）
 1. `develop` をチェックアウト → `Pull`（最新化）
-2. `Branch` → `feature/課題名` を作る（例：`feature/task1`）
+2. `Branch` → `feature/課題名` を作る（例：`feature/03-commit-practice`）
 3. 編集→保存 → `File Status` → ステージング → `Commit`
 4. `Push`（`feature/...` を GitHub に送る）
 5. GitHub で `feature/...` → `develop` の PR を作成 → マージ後にローカル `develop` を `Pull`
@@ -90,7 +90,7 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 ### 4-9. Pushが拒否された（先にPullが必要）
 誰か（または自分の別PC）が先に更新していると、プッシュが「拒否」されることがあります。落ち着いてこれだけ。
 
-1. 今いるブランチ（例：`feature/task1`）をチェックアウト
+1. 今いるブランチ（例：`feature/課題名`）をチェックアウト
 2. `Pull`（必要ならコンフリクト解決）
 3. もう一度 `Push`
 
@@ -105,7 +105,7 @@ Sourcetree / GitHub は表示言語によってボタン名が変わります。
 AIは今開いているページを自動で把握しています。状況だけ伝えればOKです。
 
 ```md
-目的：（例）feature/task1をdevelopへPR提出したい
+目的：（例）feature/課題名をdevelopへPR提出したい
 今いるブランチ：（Sourcetreeで太字/チェックのブランチ名）
 見ている画面：File Status / History / Push / Pull / Branch / GitHub PR
 起きていること：（例）Commitできない / Pushで失敗 / featureが見えない
@@ -114,7 +114,7 @@ AIは今開いているページを自動で把握しています。状況だけ
 
 ### 6-1. 具体例（このまま質問してOK）
 - 「`File Status` で `Unstaged files` に（___）が出てるけど、`Staged files` は空。コミットまでのクリック順を教えて」
-- 「`Push` 画面で `feature/task1` を送りたい。どこにチェックを入れる？」
+- 「`Push` 画面で `feature/課題名` を送りたい。どこにチェックを入れる？」
 - 「GitHub の PR 画面で base/compare が `base=___` / `compare=___` になってる。正しい？」
 - 「`History` の右クリックで取り消したい。`Revert` ってどれ？」
 

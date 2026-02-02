@@ -4,10 +4,10 @@
 > 初めてで不安な方も、手順通りに進めれば大丈夫です。
 
 ## 1. この章のゴール
-- GitHub / Sourcetree / VS Code を準備して、課題提出のスタート地点に立てる。
+- GitHub / Sourcetree / エディタを準備して、課題提出のスタート地点に立てる。
 - GitHub アカウントを作り、Sourcetree を使ってリポジトリをクローンできる。
 
-## 2. 概念の説明（図や比喩を使ってわかりやすく）
+## 2. 概念の説明
 - まず安心してほしいこと：Git は「間違えても戻れる仕組み」です。最初に覚えると、その後の課題がずっと楽になります。
 - GitHub は「ネット上の金庫」（提出先＋バックアップ）、Sourcetree は「金庫を操作するリモコン」です。
 
@@ -30,12 +30,10 @@
 - メール認証まで完了させる
 
 ### 3-2. GitHub でリポジトリを作成
-（授業で指定されたリポジトリがある場合は、それを使って OK です）
-
 - GitHub 右上の `+` → `New repository`
 - `Repository name`：例 `git-learning`
-- `Public / Private`：課題の提出ルールに従う（迷ったら先生に確認）
-- 迷ったら `Add a README file` を ON（最初のクローンが楽です）
+- `Public` に設定してください
+- `Add a README file` を **必ず ON** にしてください
 - `Create repository`
 
 ### 3-3. Sourcetree のインストールと初期設定
@@ -51,12 +49,12 @@
   - `Name`：あなたの名前（本名でもハンドルネームでもOK。履歴に残ります）
   - `Email`：GitHub に登録しているメール（または GitHub の no-reply メールでもOK）
 
-### 3-3.6 （おすすめ）VS Code を差分/マージツールに設定する
-コンフリクト解決（第6章）で、VS Code が開くようにしておくと安心です。
+### 3-3.6 （おすすめ）お使いのエディタを差分/マージツールに設定する
+コンフリクト解決（第6章）で、エディタが開くようにしておくと安心です。
 
 - Sourcetree → `Preferences` / `Options`
 - `Diff` / `Merge` の項目を探す
-- `External Diff Tool` / `External Merge Tool` に `Visual Studio Code` を選ぶ（選べない場合はスキップでOK）
+- `External Diff Tool` / `External Merge Tool` にお使いのエディタ（例：VS Code）を選ぶ（選べない場合はスキップでOK）
 
 ### 3-4. GitHub リポジトリを Sourcetree にクローンする
 - GitHub のリポジトリ画面で `Code` → `HTTPS` を選ぶ → URL をコピー（`https://github.com/...` の形）
@@ -75,7 +73,7 @@
 - Sourcetree でリポジトリが左側に追加されている
 - 左のブランチ一覧に `main`（または `master`）が見える
 - 左の `Remotes` に `origin` があり、GitHub の URL が設定されている
-- VS Code でフォルダを開ける
+- お使いのエディタ（例：VS Code）でフォルダを開ける
   - Sourcetree のメニューから `Open in Finder/Explorer` や `Open in External Editor` を探す（表示名は環境で異なります）
 確認のコツ：
 - Sourcetree 左側に「リポジトリ一覧」が出ていればOK（見えない場合は、画面左のサイドバーを広げてみてください）
@@ -123,13 +121,13 @@
 ```
 
 ## 6. ハンズオン課題（成果物提出を想定）
-- クローンしたリポジトリを VS Code で開き、`README.md` に自己紹介を2行だけ追記して保存する。
+- クローンしたリポジトリをお使いのエディタ（例：VS Code）で開き、`README.md` に自己紹介を2行だけ追記して保存する。
 - 次章で Sourcetree から「ステージング→コミット→プッシュ」を行います（この章では編集までで OK）。
 
 ## 7. チェックリスト（理解確認）
 - [ ] GitHub＝金庫、Sourcetree＝リモコン、で説明できる。
 - [ ] Sourcetree でリポジトリをクローンできた。
-- [ ] VS Code でクローンしたフォルダを開けた。
+- [ ] お使いのエディタ（例：VS Code）でクローンしたフォルダを開けた。
 
 ---
 
