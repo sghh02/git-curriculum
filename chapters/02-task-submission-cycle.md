@@ -1,16 +1,16 @@
 # Gitflowによる課題提出サイクル
 
-> **この章の前提**：Unit 1「環境構築」が完了していること
-> - GitHub アカウントを作成済み
-> - Sourcetree をインストール済み
-> - リポジトリをクローン済み
->
-> まだの場合は、先に Unit 1 を完了してから戻ってきてください。
+**この章の前提**：Unit 1「環境構築」が完了していること
+- GitHub アカウントを作成済み
+- Sourcetree をインストール済み
+- リポジトリをクローン済み
 
-> 提出ブランチ：`feature/02-task-submission-cycle`（PRのbase：`develop`）
+まだの場合は、先に Unit 1 を完了してから戻ってきてください。
+
+提出ブランチ：`feature/02-task-submission-cycle`（PRのbase：`develop`）
 
 ## 1. この章のゴール
-- `develop` から `feature/task1` を作り、課題提出（PR）までを一通りできる。
+- `develop` から `feature/課題名` を作り、課題提出（PR）までを一通りできる。
 - 「どこをクリックするか」を見ながら、Sourcetree で迷わず操作できる。
 - 専門用語（ブランチ、マージ、インデックスなど）を自分の言葉で説明できる。
 
@@ -22,7 +22,7 @@
 - **base / compare**：PR の「取り込み先 / 提出元」（この運用では base=`develop`）。
 
 ## 3. 実践：課題提出の5ステップ（Sourcetree中心）
-※ ここでは `task1` を例にしています。あなたの課題名に合わせて `feature/課題名` に置き換えてOKです。
+※ ここでは `feature/02-submit-practice` を例にしています。実際の課題では `feature/課題名` に置き換えてください。
 
 ### 0) 作業前の準備（事故防止）
 - Sourcetree のブランチ一覧で `develop` をダブルクリック（チェックアウト）
@@ -34,40 +34,40 @@
 - `develop` は Sourcetree 左の `Branches` に出ます（太字/チェックが付いたら “今いるブランチ”）
 - `Pull` は Sourcetree 上部のツールバーにあります
 
-### 1) ブランチ作成：`develop` → `feature/task1`
+### 1) ブランチ作成：`develop` → `feature/02-submit-practice`
 - `develop` を選んだ状態で、上部の `Branch` をクリック
-- ブランチ名に `feature/task1` を入力
+- ブランチ名に `feature/02-submit-practice` を入力
 - `Checkout new branch` にチェック（作成後に切り替える）
 - `Create Branch` / `OK`
 
 目印：`Branch` を押すと「新しいブランチ」ダイアログが出ます。`Branch name` の入力欄と `Checkout new branch` のチェックを確認します。
 
-### 2) 作業と保存：VS Codeで編集 → ステージング → コミット
-**VS Code（編集）**
+### 2) 作業と保存：エディタで編集 → ステージング → コミット
+**お使いのエディタ（例：VS Code）で編集**
 - ファイルを編集して `保存`（ここで「変更」が発生します）
 
 **Sourcetree（ステージング→コミット）**
 - `File Status` を開く
 - `Unstaged files` に出ているファイルをクリックして差分を確認
 - 右側の `Stage`（＋/チェック）を押して `Staged files` に移す
-- コミットメッセージを書く（例：`task1: READMEに自己紹介を追加`）
+- コミットメッセージを書く（例：`02-submit-practice: READMEに自己紹介を追加`）
 - `Commit` をクリック
 
 目印：`File Status` 画面に `Unstaged files / Staged files` があり、コミットメッセージ入力欄が上部に出ます。
 
 ### 3) 同期：GitHubへプッシュ
 - 上部の `Push` をクリック
-- `feature/task1` にチェックが入っていることを確認
+- `feature/02-submit-practice` にチェックが入っていることを確認
 - `Push` をクリック
 
-目印：`Push` ダイアログで “送るブランチ” にチェックを入れます（`feature/task1` が正しいか必ず確認）。
+目印：`Push` ダイアログで "送るブランチ" にチェックを入れます（`feature/02-submit-practice` が正しいか必ず確認）。
 
 ### 4) 提出：GitHubで `feature` → `develop` のPull Requestを作る
 - GitHubでリポジトリを開く
 - 上部の `Pull requests` をクリック
 - `New pull request` をクリック
 - `base` を **develop** にする（取り込み先）
-- `compare` を **feature/task1** にする（提出元）
+- `compare` を **feature/02-submit-practice** にする（提出元）
 - `Create pull request` をクリック
 
 ※ `develop` が選べない場合は、GitHub 側に `develop` がまだ無い可能性があります。`develop` を `Push` してから再度試してください。
@@ -93,7 +93,7 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 - 上部の `Pull` をクリック
 
 （余裕があれば）後片付け：
-- `feature/task1` を右クリック → `Delete`（ローカルブランチ削除）
+- `feature/02-submit-practice` を右クリック → `Delete`（ローカルブランチ削除）
 
 目印：左の `develop` をダブルクリックで切り替えたあと、上部ツールバーの `Pull` を押します。
 
@@ -120,72 +120,39 @@ PR がマージされたら、あなたの PC 側（ローカル）も最新に�
 - `origin/develop` が GitHub に存在する
 - Sourcetree で `main` と `develop` が見える
 
-**提出物（先生に出すなら）**
+**提出物（メンターに出すなら）**
 - GitHub の `develop` ブランチURL（URLに `/tree/develop` が含まれていればOK）
 - Sourcetree で「今いるブランチ」が `develop` になっていること（ブランチ名を文字で報告）
 
-### 模擬課題1：課題提出リハーサル（PR→マージ→Pull）（30〜45分）
-**ゴール**：`feature/task1` から `develop` に PR を出し、マージ後にローカル `develop` へ反映できる。
+### 模擬課題1：課題提出リハーサル（PR→マージ→Pull）
+**ゴール**：`feature/02-submit-practice` から `develop` に PR を出し、マージ後にローカル `develop` へ反映できる。
 
 **やること**
 1. `develop` をチェックアウト → `Pull`
-2. `develop` から `feature/task1` を作成
-3. VS Code で `README.md` に「自己紹介」か「学習メモ」を追記して保存
-4. Sourcetree でステージング → コミット（例：`task1: READMEに自己紹介を追加`）
-5. `Push`（`feature/task1` を GitHub へ）
-6. GitHub で PR を作成（base=`develop`、compare=`feature/task1`）
+2. `develop` から `feature/02-submit-practice` を作成
+3. お使いのエディタ（例：VS Code）で `README.md` に「自己紹介」か「学習メモ」を追記して保存
+4. Sourcetree でステージング → コミット（例：`02-submit-practice: READMEに自己紹介を追加`）
+5. `Push`（`feature/02-submit-practice` を GitHub へ）
+6. GitHub で PR を作成（base=`develop`、compare=`feature/02-submit-practice`）
 7. PR テンプレの空欄を埋めて提出
-8. PR をマージ（授業ルールに従う：先生がマージする場合は待つ）
+8. PR をマージ（授業ルールに従う：メンターがマージする場合は待つ）
 9. ローカルで `develop` をチェックアウト → `Pull`（マージ結果を取り込む）
 
 **合格条件**
-- PR の base が `develop`、compare が `feature/task1`
+- PR の base が `develop`、compare が `feature/02-submit-practice`
 - PR 本文に「目的・変更点・確認方法」が書けている
 - マージ後、ローカル `develop` の `History` にマージ結果が見える
 
-**提出物（先生に出すなら）**
+**提出物（メンターに出すなら）**
 - PR のURL
 - PR が `Merged` になっていること（PR画面の `Merged` 表示を確認）
 - ローカル `develop` の最新コミットメッセージ（Sourcetree `History` の一番上を1行で報告）
-
-### 模擬課題2：コンフリクト練習（PRでConflictsを出して直す）（45〜60分・上級）
-**ゴール**：コンフリクトを怖がらずに解決し、PR をマージできる。
-
-**やること（ポイント：AとBを“同じ元（develop）から”作る）**
-0. `develop` をチェックアウト → `Pull`
-1. `develop` に練習用ファイルを作る（1回だけ）
-   - `practice.md` を作成して次の1行を書いて保存：`LINE: original`
-   - ステージング → コミット（例：`chore: add practice file`）→ `Push`（developへ）
-2. `develop` から `feature/conflict-a` を作成
-   - `practice.md` の `LINE:` を `LINE: from A` に変更 → コミット → プッシュ
-   - GitHub で PR（A）を作成（base=`develop`）※まだマージしない
-3. `develop`（まだ更新しない）から `feature/conflict-b` を作成
-   - `practice.md` の `LINE:` を `LINE: from B` に変更 → コミット → プッシュ
-   - GitHub で PR（B）を作成（base=`develop`）
-4. GitHub で PR（A）を先にマージ
-5. PR（B）に `Conflicts` が出たら、次で解決
-   - ローカルで `develop` をチェックアウト → `Pull`（最新化）
-   - `feature/conflict-b` をチェックアウト
-   - Sourcetree の `Merge` で `develop` を取り込む
-   - コンフリクトが出たら VS Code で `practice.md` を整える（第6章を見ながら）
-   - 解決コミット → `Push`（feature/conflict-bへ）
-6. PR（B）がマージ可能になったらマージ
-7. ローカル `develop` を `Pull` して完了
-
-**合格条件**
-- PR（B）で `Conflicts` が出た状態から、自分で解決して `Merged` まで到達できた
-- 解決コミットが `feature/conflict-b` に積まれている（履歴で確認できる）
-
-**提出物（先生に出すなら）**
-- PR（A）とPR（B）のURL
-- PR（B）で追加した「解決コミット」のメッセージ（例：`Resolve conflict in practice.md`）
-- PR（B）が最終的に `Merged` になったこと
 
 ## 7. AIに質問するテンプレ
 AIは今開いているページを自動で把握しています。状況だけ伝えればOKです。
 
 ```md
-やりたいこと：（例）feature/task1からdevelopへPR提出したい
+やりたいこと：（例）feature/02-submit-practiceからdevelopへPR提出したい
 今いるブランチ：（Sourcetreeで太字/チェックのブランチ名）
 詰まっているステップ：（0〜5のどこか。例：3) Push）
 起きていること：（例）PRのbaseが選べない / Pushで失敗する
@@ -194,10 +161,9 @@ AIは今開いているページを自動で把握しています。状況だけ
 
 ### 具体例（このまま質問してOK）
 ```text
-「いま `1) ブランチ作成` です。`develop` を選んで `Branch` を押した後、どこに `feature/task1` を入れる？チェックすべき項目も教えて」
+「いま `1) ブランチ作成` です。`develop` を選んで `Branch` を押した後、どこに `feature/課題名` を入れる？チェックすべき項目も教えて」
 「いま `4) PR作成` です。表示されている base/compare は `base=___` / `compare=___`。正しい？間違っていたらどこを直す？」
 「模擬課題1のPR本文を作って。目的/変更点/確認方法に分けて、初心者でも短く分かる文章にして」
-「模擬課題2で PR(B) に `Conflicts` が出た。次にSourcetreeで押すボタンを順番に教えて（CLIは使わないで）」
 ```
 
 ---

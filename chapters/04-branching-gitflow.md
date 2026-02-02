@@ -4,10 +4,10 @@
 
 ## 1. この章のゴール
 - Gitflow（簡易版）の `main / develop / feature/課題名` の役割を説明できる。
-- `develop` から `feature/task1` を作り、Sourcetree で安全に作業できる。
+- `develop` から `feature/課題名` を作り、Sourcetree で安全に作業できる。
 - 「main で直接作業しない理由」を不安なく説明できる。
 
-## 2. 概念の説明（図や比喩を使ってわかりやすく）
+## 2. 概念の説明
 - **ブランチ**：作業用の “別ルート” です。安全に試せる「別コピーの道」だと思ってください。
 - **マージ**：別ブランチの変更を取り込んで合体することです。
 
@@ -22,7 +22,7 @@
 - `feature/...`：あなた専用の机
 
 ### ブランチ名のコツ（迷ったらこのルール）
-- 形式：`feature/課題名`（例：`feature/task1`）
+- 形式：`feature/課題名`（例：`feature/04-branch-practice`）
 - 1課題＝1ブランチ（混ぜない）
 - 日本語より英数字をおすすめ（環境依存トラブルが減ります）
 
@@ -46,28 +46,28 @@
 - `develop` をダブルクリック（チェックアウト＝そのブランチに切り替えること）
 - 上部の `Pull` をクリック（最新を取り込む）
 
-### 3-2. `develop` から `feature/task1` を作る
+### 3-2. `develop` から `feature/04-branch-practice` を作る
 - `develop` を選んだ状態で、上部の `Branch` をクリック
-- ブランチ名：`feature/task1`（課題名に合わせる）
+- ブランチ名：`feature/04-branch-practice`（課題名に合わせる）
 - `Checkout new branch` にチェック（作成後、そのまま feature に切り替える）
 - `Create Branch` / `OK`
 
 目印：上部ツールバーの `Branch` を押すとダイアログが開きます。`Branch name` と `Checkout new branch` を確認します。
 
 ### 3-3. feature で作業 → コミット → プッシュ
-- VS Code で編集して保存
+- お使いのエディタ（例：VS Code）で編集して保存
 - Sourcetree の `File Status` → ステージング → コミット（第3章の手順）
-- `Push` で `feature/task1` を GitHub に送る
+- `Push` で `feature/04-branch-practice` を GitHub に送る
 
 ### 3-4. 提出（PR）について
-`feature/task1` の変更は、GitHub 上で `feature/task1` → `develop` の Pull Request（PR）として提出します。  
+`feature/04-branch-practice` の変更は、GitHub 上で `feature/04-branch-practice` → `develop` の Pull Request（PR）として提出します。  
 PR の作り方は次章で “どこをクリックするか” まで説明します。
 
 ### 3-5. PR がマージされた後：ローカル `develop` に反映
 - Sourcetree で `develop` をチェックアウト
 - `Pull` で最新化
 - 余裕があれば後片付け（不安ならスキップしてOK）:
-  - `feature/task1` を右クリック → `Delete`（ローカルブランチ削除）
+  - `feature/04-branch-practice` を右クリック → `Delete`（ローカルブランチ削除）
 
 ### 3-6. 1課題の鉄板ルーティン（毎回これだけ）
 1. `develop` をチェックアウト → `Pull`（最新化）
@@ -85,22 +85,22 @@ PR の作り方は次章で “どこをクリックするか” まで説明し
 ### トラブル：`main` で作業してしまった（Sourcetree）
 まず落ち着いてください。よくあるミスで、ちゃんと戻せます。
 
-**A）まだコミットしていない（変更が “作業中” のまま）**
+**A）まだコミットしていない（変更が "作業中" のまま）**
 - `main` を右クリック → `Branch...`
-- ブランチ名を `feature/task1` にして作成（そのままチェックアウト）
+- ブランチ名を `feature/課題名` にして作成（そのままチェックアウト）
 - そのブランチで通常通りコミット → プッシュ
 
 **B）すでにコミットしてしまった（`main` にコミットが乗った）**
 - まず保険：`main` を右クリック → `Branch...` → `backup/main-mistake` のような名前でブランチを作る
-- そのコミット地点から `feature/task1` を作って作業を続ける
-- `main` を元に戻す操作（Reset）は怖いので、授業ルールに合わせて先生に確認するのがおすすめです
+- そのコミット地点から `feature/課題名` を作って作業を続ける
+- `main` を元に戻す操作（Reset）は怖いので、授業ルールに合わせてメンターに確認するのがおすすめです
 
 ## 5. AIに聞いてみよう（質問例）
 AIは今開いているページを自動で把握しています。状況だけ伝えればOKです。
 
 **コピペ用テンプレ（ブランチ/作業場所の確認）**
 ```md
-目的：（例）developからfeature/task1を作りたい / mainで作業してしまったので戻したい
+目的：（例）developからfeature/課題名を作りたい / mainで作業してしまったので戻したい
 今いるブランチ：（Sourcetreeで太字/チェックのブランチ名）
 いま見えているブランチ：（main/develop/feature... がSourcetreeに見えるか）
 起きていること：（例）featureが作れない / PRが作れない / mainにコミットした
@@ -112,13 +112,13 @@ AIは今開いているページを自動で把握しています。状況だけ
 「`3-2` です。課題名が（___）なんだけど、`feature/課題名` のブランチ名案を3つ出して（英数字・kebab-case）」
 「`main` で作業してしまった。**未コミット/コミット済み** どっちか分からないので、まず確認する場所（Sourcetreeのどこ？）と、その後の安全な戻し方を教えて」
 「PRを出す前に、`develop` を最新化できてるか不安。`History` のどこを見れば “古い/新しい” が分かる？」
-「マージ後の後片付けで、`feature/task1` は消していい？消すなら “ローカル/リモート” どっちを消すのが安全？」
+「マージ後の後片付けで、`feature/課題名` は消していい？消すなら "ローカル/リモート" どっちを消すのが安全？」
 ```
 
 ## 6. ハンズオン課題（成果物提出を想定）
-- `develop` から `feature/task1` を作成する。
+- `develop` から `feature/04-branch-practice` を作成する。
 - `README.md` に自己紹介を追記し、コミットしてプッシュする。
-- GitHub 上でブランチが増えていること（`feature/task1` が見えること）を確認する。
+- GitHub 上でブランチが増えていること（`feature/04-branch-practice` が見えること）を確認する。
 
 ## 7. チェックリスト（理解確認）
 - [ ] `main / develop / feature` の役割を説明できる。
