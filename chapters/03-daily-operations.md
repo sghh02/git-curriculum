@@ -1,5 +1,7 @@
 # add / commit / push とログの読み方
 
+![add / commit / push とログの読み方 - 概要図](./images/04.png)
+
 > 提出ブランチ：`feature/03-daily-operations`（PRのbase：`develop`）
 
 ## 1. この章のゴール
