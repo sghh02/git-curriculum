@@ -6,6 +6,7 @@ const indexPath = resolve(repoRoot, "index.json");
 const index = JSON.parse(readFileSync(indexPath, "utf-8"));
 
 const errors = [];
+const warnings = [];
 
 function escapeRegExp(str) {
   return String(str).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -40,18 +41,30 @@ const normalizeTitle = (value) =>
     .replace(/^\d+\s+/, "")
     .replace(/\s+/g, "");
 
+const getLessons = (group) =>
+  Array.isArray(group.items)
+    ? group.items
+    : Array.isArray(group.lessons)
+      ? group.lessons
+      : [];
+
 const groups = Array.isArray(index.chapters)
   ? index.chapters
   : Array.isArray(index.units)
     ? index.units
     : [];
 
+const pathToTitle = new Map();
 for (const group of groups) {
-  const lessons = Array.isArray(group.items)
-    ? group.items
-    : Array.isArray(group.lessons)
-      ? group.lessons
-      : [];
+  for (const lesson of getLessons(group)) {
+    if (typeof lesson?.path === "string" && typeof lesson?.title === "string") {
+      pathToTitle.set(lesson.path, lesson.title);
+    }
+  }
+}
+
+for (const group of groups) {
+  const lessons = getLessons(group);
 
   for (const lesson of lessons) {
     if (!lesson?.path || !lesson?.title) {
@@ -103,12 +116,69 @@ for (const group of groups) {
         }
       }
     }
+
+    // Ensure internal chapter links are valid for the viewer (path-based navigation).
+    {
+      const lines = content.split(/\r?\n/);
+      let inFence = false;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (line.startsWith("```")) {
+          inFence = !inFence;
+          continue;
+        }
+        if (inFence) continue;
+
+        const linkMatches = line.matchAll(
+          /\[([^\]]+)\]\(((?:\.\/|chapters\/)[^)\s]+?\.md)\)/g
+        );
+        for (const match of linkMatches) {
+          const label = match[1].trim();
+          const target = match[2].trim();
+          const canonical = target.startsWith("./") ? `chapters/${target.slice(2)}` : target;
+          const expected = pathToTitle.get(canonical);
+          if (!expected) {
+            errors.push(
+              `${lesson.path}: link target \`${target}\` does not match any lesson path in index.json at line ${i + 1}.`
+            );
+            continue;
+          }
+          if (label !== expected) {
+            const recommendedTarget = `./${basename(canonical)}`;
+            warnings.push(
+              `${lesson.path}: link text should match sidebar title ([${expected}](${recommendedTarget})) at line ${i + 1}.`
+            );
+          }
+          if (target.startsWith("chapters/")) {
+            errors.push(
+              `${lesson.path}: use relative links like \`./${basename(canonical)}\` instead of \`${target}\` at line ${i + 1}.`
+            );
+          }
+        }
+
+        // Disallow visible raw chapter paths (students shouldn't see file names).
+        const stripped = line.replace(
+          /\[[^\]]*\]\(((?:\.\/|chapters\/)[^)\s]+?\.md)\)/g,
+          ""
+        );
+        const rawMatch = stripped.match(/(?:chapters\/|\.\/)[^\s)]+?\.md/);
+        if (rawMatch) {
+          warnings.push(
+            `${lesson.path}: avoid showing raw chapter path \`${rawMatch[0]}\` at line ${i + 1} (use a title link).`
+          );
+        }
+      }
+    }
   }
 }
 
 if (errors.length > 0) {
   console.error("Validation failed:\n" + errors.map((error) => `- ${error}`).join("\n"));
   process.exit(1);
+}
+
+if (warnings.length > 0) {
+  console.warn("Warnings:\n" + warnings.map((warning) => `- ${warning}`).join("\n"));
 }
 
 console.log("Validation passed.");

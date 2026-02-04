@@ -34,8 +34,8 @@
 ### 3-2. GitHub でリポジトリを作成
 - GitHub 右上の `+` → `New repository`
 - `Repository name`：例 `git-learning`
-- `Public` に設定してください
-- `Add a README file` を **必ず ON** にしてください
+- `Public / Private`：Public 推奨（AIレビューが参照できるように）。事情があれば先生に確認
+- `Add a README file` を **必ず ON** にしてください（最初のクローンが楽です）
 - `Create repository`
 
 ### 3-3. Sourcetree のインストールと初期設定
