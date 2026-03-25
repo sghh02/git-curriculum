@@ -1,29 +1,29 @@
 {
   "curriculumId": "git-curriculum",
   "title": "Git / GitHub 基礎（Sourcetree版）",
-  "description": "課題提出に直結する Git / GitHub 学習カリキュラム（Sourcetree + VS Code / Gitflow簡易版）",
+  "description": "課題提出に直結する Git / GitHub 学習カリキュラム（Sourcetree + Gitflow簡易版）。スキルを1つずつ積み上げ、最後に統合する構成。",
   "chapters": [
     {
       "id": "unit0",
       "title": "Unit 0: イントロダクション",
       "items": [
         {
-          "id": "intro",
-          "title": "なぜプログラミングの前にGitをやるのか",
-          "path": "chapters/00-introduction.md",
-          "estimatedMinutes": 25,
+          "id": "why-git",
+          "title": "なぜGitを学ぶのか",
+          "path": "chapters/00-why-git.md",
+          "estimatedMinutes": 15,
           "hasAssignment": false
         }
       ]
     },
     {
       "id": "unit1",
-      "title": "Unit 1: 環境構築（Sourcetree + GitHub）",
+      "title": "Unit 1: 環境構築",
       "items": [
         {
           "id": "setup",
           "title": "環境構築（Sourcetree + GitHub）",
-          "path": "chapters/01-setup-sourcetree-github.md",
+          "path": "chapters/01-setup.md",
           "estimatedMinutes": 90,
           "hasAssignment": false
         }
@@ -31,67 +31,60 @@
     },
     {
       "id": "unit2",
-      "title": "Unit 2: 実践（Gitflowによる課題提出）",
+      "title": "Unit 2: 基本操作",
       "items": [
         {
-          "id": "task-submission-cycle",
-          "title": "Gitflowによる課題提出サイクル",
-          "path": "chapters/02-task-submission-cycle.md",
-          "estimatedMinutes": 120,
-          "hasAssignment": true
-        },
-        {
-          "id": "daily-operations",
-          "title": "add / commit / push とログの読み方",
-          "path": "chapters/03-daily-operations.md",
-          "estimatedMinutes": 90,
+          "id": "first-commit",
+          "title": "はじめてのコミットとプッシュ",
+          "path": "chapters/02-first-commit.md",
+          "estimatedMinutes": 60,
           "hasAssignment": true
         },
         {
           "id": "branching",
-          "title": "ブランチ運用とマージ",
-          "path": "chapters/04-branching-gitflow.md",
+          "title": "ブランチで安全に作業する",
+          "path": "chapters/03-branching.md",
           "estimatedMinutes": 60,
           "hasAssignment": true
         },
         {
           "id": "pull-request",
-          "title": "PRの作成とセルフレビュー",
-          "path": "chapters/05-pull-request.md",
-          "estimatedMinutes": 70,
+          "title": "PRで課題を提出する",
+          "path": "chapters/04-pull-request.md",
+          "estimatedMinutes": 60,
           "hasAssignment": true
         }
       ]
     },
     {
       "id": "unit3",
-      "title": "Unit 3: トラブルシューティング",
+      "title": "Unit 3: 実践",
       "items": [
+        {
+          "id": "submission-workflow",
+          "title": "課題提出ワークフロー",
+          "path": "chapters/05-submission-workflow.md",
+          "estimatedMinutes": 90,
+          "hasAssignment": true
+        },
         {
           "id": "conflict-resolution",
           "title": "コンフリクトの理解と解決",
           "path": "chapters/06-conflict-resolution.md",
-          "estimatedMinutes": 80,
+          "estimatedMinutes": 70,
           "hasAssignment": true
-        },
-        {
-          "id": "troubleshooting",
-          "title": "トラブルシューティング（詰まったらここ）",
-          "path": "chapters/07-troubleshooting.md",
-          "estimatedMinutes": 45,
-          "hasAssignment": false
         }
       ]
     },
     {
       "id": "unit4",
-      "title": "Unit 4: チートシート",
+      "title": "Unit 4: リファレンス",
       "items": [
         {
-          "id": "sourcetree-cheatsheet",
-          "title": "Sourcetreeチートシート（クリック場所早見表）",
-          "path": "chapters/08-sourcetree-cheatsheet.md",
-          "estimatedMinutes": 15,
+          "id": "troubleshooting",
+          "title": "トラブルシューティング＆クイックリファレンス",
+          "path": "chapters/07-troubleshooting.md",
+          "estimatedMinutes": 20,
           "hasAssignment": false
         }
       ]
