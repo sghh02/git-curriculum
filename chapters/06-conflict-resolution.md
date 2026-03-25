@@ -2,134 +2,121 @@
 
 > 提出ブランチ：`feature/06-conflict-resolution`（PRのbase：`develop`）
 
+**前提**：第5章まで完了し、課題提出のフローを一通りできること。
+
 ## 1. この章のゴール
-- コンフリクト（衝突）が起きる理由を、怖がらずに説明できる。
-- Sourcetree でコンフリクトが起きたときの "見え方" を理解する。
-- お使いのエディタ（例：VS Code）を使ってコンフリクトを解決し、コミットして先に進める。
 
-## 2. 概念の説明
-- **コンフリクト**：同じファイルの同じ場所を、別々の変更が同時に書き換えたときに起きます。
-- Git は「どっちを採用すべきか自動で決められない」ので、一旦止まってあなたに選んでもらいます。
-- たとえるなら「二人が同じホワイトボードの同じ行を同時に書き換えた状態」です。
+- コンフリクトが起きる理由を、怖がらずに説明できる
+- お使いのエディタ（例：VS Code）でコンフリクトを解決できる
+- PRで「Conflicts」が出たときに、自力で対処できる
 
-怖く見えるだけで、やることはシンプルです：
-1) どっちの内容を残すか決める → 2) ファイルを整える → 3) “解決済み” にしてコミットする
+## 2. 用語
 
-## 3. 実際の操作手順（Sourcetree + エディタ）
-### 3-1. まず予防：コンフリクトを減らすコツ
-- 作業開始前に `develop` をチェックアウト → `Pull` で最新化
-- 同じファイルを長時間編集し続けない（区切りでコミット）
+| 用語 | 意味 |
+|------|------|
+| **コンフリクト** | 同じファイルの同じ場所を別々の変更が書き換えて、Git が自動で決められない状態 |
+| **コンフリクトマーカー** | `<<<<<<` `======` `>>>>>>` の記号。エディタで解決する目印 |
 
-### 3-2. コンフリクトが起きたときの “見え方”（Sourcetree）
+たとえるなら「二人が同じホワイトボードの同じ行を同時に書き換えた」状態です。怖く見えますが、やることはシンプルです。
+
+## 3. コンフリクト解決の3ステップ
+
+1. どちらの内容を残すか決める（両方残してもOK）
+2. ファイルを整える（マーカーを消す）
+3. 解決済みにしてコミット
+
+## 4. Sourcetree でのコンフリクトの見え方
+
 - `Pull` や `Merge` の途中で止まる
-- `Conflicts` の表示が出る
 - `File Status` に赤いアイコンのファイルが並ぶ
+- `Conflicts` の表示が出る
 
-目印：`File Status` を開くと、`Conflicts`（または赤い表示）のファイル一覧が出ます。ここに出ているファイルが「今解決が必要なもの」です。
+## 5. 解決手順
 
-### 3-3. 解決する（エディタで編集）
-- Sourcetree の `File Status` で、衝突しているファイルをクリック
-- `Resolve Conflicts` / `Open in External Merge Tool`（表示名は環境で異なる）を選ぶ
-- お使いのエディタ（例：VS Code）が開いたら、次を確認する
-  - `<<<<<<` や `======` のような "コンフリクトマーカー" が見える
-  - エディタのマージ画面が出る場合は、`Accept Current` / `Accept Incoming` などのボタンが出る
-- `Current` は「いまチェックアウトしているブランチ（あなた側）」、`Incoming` は「取り込み元のブランチ（例：develop側）」です
-- 「最終的に残したい文章」になるように整える（両方必要なら両方残して OK）
+### 5-1. エディタで編集する
+
+- Sourcetree の `File Status` でコンフリクトファイルをクリック
+- エディタで開く（`Resolve Conflicts` / `Open in External Merge Tool` など）
+- コンフリクトマーカーが見える：
+
+```
+<<<<<<< HEAD
+あなたの変更（Current）
+=======
+取り込み元の変更（Incoming）
+>>>>>>> develop
+```
+
+- `Current` = 今いるブランチ（あなた側）
+- `Incoming` = 取り込み元（例：develop 側）
+- エディタに `Accept Current` / `Accept Incoming` ボタンが出る場合はそれを使う
+- 出ない場合は、マーカー（`<<<<<<` `======` `>>>>>>` ）を手で消して文章を整える
 - 保存する
-目印：エディタの衝突箇所の近くに `Accept Current/Incoming`（または `Accept Current Change` など）ボタンが出ることがあります。出ない場合は、マーカー（`<<<<<<` など）を手で消して文章を整えればOKです。
 
-### 3-4. “解決済み” にしてコミットする（Sourcetree）
+### 5-2. 解決済みにしてコミット
+
 - Sourcetree に戻る
-- そのファイルが “Resolved” になっているか確認（必要なら `Mark Resolved` を押す）
+- ファイルが `Resolved` になっているか確認（なければ `Mark Resolved` を押す）
 - ステージング → コミット（例：`Resolve conflict in README`）
 - 必要なら `Push`
 
-### 3-5. PRで「Conflicts」と出たとき（いちばん多い実戦パターン）
-GitHub の PR 画面で `This branch has conflicts` のように表示されたら、だいたい「`develop` 側が進んでいて、あなたの `feature` が古い」状態です。  
-やることは **feature に develop を取り込んで（マージして）押し上げる** だけです。
+## 6. PRで「Conflicts」が出たとき
 
-1) `develop` を最新化
-- Sourcetree で `develop` をチェックアウト
-- `Pull` で最新化
+GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` が進んでいて、`feature` が古い」状態です。
 
-2) `feature` に `develop` をマージ
-- `feature/課題名`（自分の PR のブランチ）をチェックアウト
-- 上部の `Merge` をクリック
-- 取り込み元に `develop` を選ぶ → `OK`
+### 手順
 
-3) コンフリクトが出たら解決
-- もし `Conflicts` が出たら、この章の `3-3`〜`3-4` の手順で解決 → コミット
+1. `develop` をチェックアウト → `Pull`（最新化）
+2. `feature/課題名` をチェックアウト
+3. 上部の `Merge` → 取り込み元に `develop` を選ぶ → `OK`
+4. コンフリクトが出たら上記の手順で解決 → コミット
+5. `Push` して GitHub に反映
+6. PR 画面を更新して `Able to merge` になればOK
 
-4) `feature` をプッシュ
-- `Push` して GitHub に反映
-- PR 画面を更新して、`Able to merge`（または同等の表示）になればOK
-目印：GitHub の PR 画面の「マージ」エリアに `This branch has conflicts`（または同等の表示）が出ます。解決して push すると `Able to merge` に戻ります。
+## 7. よくあるミス
 
-## 4. よくあるミス・つまずきポイント
-- コンフリクトマーカー（`<<<<<<` など）を残したままコミットしてしまう → コミット前にファイルを必ず開いて確認。
-- "どっちか分からないけど消した" で進めてしまう → 不安ならメンターに相談して OK。
-- そもそも `develop` を最新化していない → まず `develop` で `Pull` の習慣。
+| 症状 | 対処 |
+|------|------|
+| マーカーを残したままコミット | コミット前にファイルを開いて `<<<<<<` が無いか確認 |
+| どちらを残すか分からない | 不安ならメンターに相談してOK |
+| `develop` を最新化していない | まず `develop` で `Pull` する習慣をつける |
 
-## 5. AIに聞いてみよう（質問例）
-AIは今開いているページを自動で把握しています。状況だけ伝えればOKです。
+## 8. AIに聞いてみよう
 
-**コピペ用テンプレ（コンフリクト解決）**
-```md
-どこで起きた：Pull / Merge / PR（GitHubでConflicts表示）
-対象ブランチ：develop / feature/___
-衝突しているファイル：（例）practice.md
-やりたいこと：（例）両方の変更を残して整えたい / Aを残してBを捨てたい
-もし貼れるなら：衝突部分のテキスト（秘密情報なし）
-```
-
-### 5-1. 具体例（このまま質問してOK）
 ```text
-「`3-5 PRでConflicts` のパターンです。PRで `This branch has conflicts` と出ました。**CLIなし**で、`feature` に `develop` を取り込むクリック順を教えて（Sourcetreeの画面名つきで）」
-「エディタのマージ画面で `Accept Current / Accept Incoming` が出ています。いま私は（feature/developどっち）をチェックアウト中。どれを押すべきか判断の考え方を教えて」
-「この衝突部分のテキストを貼るので、最終的にどう整えるのが自然？“残す案” を1つ作って（理由も短く）」
-「解決したつもりなのに Sourcetree の `Conflicts` が消えない。`Mark Resolved` の場所と、次にやること（ステージ→コミット）を確認して」
-「コンフリクトマーカー（`<<<<<<` など）を消したか不安。コミット前にチェックすべき “3つの確認” を教えて」
+「PRで Conflicts と出た。feature に develop を取り込むクリック順を教えて」
+「この衝突部分のテキストを貼るので、どう整えるのが自然か教えて」
+「解決したのに Sourcetree の Conflicts が消えない。次にやることを教えて」
 ```
 
-## 6. ハンズオン課題（成果物提出を想定）
+## 9. ハンズオン課題：コンフリクト練習
 
-### 模擬課題：コンフリクト練習（PRでConflictsを出して直す）
-**ゴール**：コンフリクトを怖がらずに解決し、PR をマージできる。
+### 準備
 
-**やること（ポイント：AとBを"同じ元（develop）から"作る）**
-0. `develop` をチェックアウト → `Pull`
-1. `develop` に練習用ファイルを作る（1回だけ）
-   - `practice.md` を作成して次の1行を書いて保存：`LINE: original`
-   - ステージング → コミット（例：`chore: add practice file`）→ `Push`（developへ）
-2. `develop` から `feature/conflict-a` を作成
-   - `practice.md` の `LINE:` を `LINE: from A` に変更 → コミット → プッシュ
-   - GitHub で PR（A）を作成（base=`develop`）※まだマージしない
-3. `develop`（まだ更新しない）から `feature/conflict-b` を作成
-   - `practice.md` の `LINE:` を `LINE: from B` に変更 → コミット → プッシュ
-   - GitHub で PR（B）を作成（base=`develop`）
-4. GitHub で PR（A）を先にマージ
-5. PR（B）に `Conflicts` が出たら、次で解決
-   - ローカルで `develop` をチェックアウト → `Pull`（最新化）
-   - `feature/conflict-b` をチェックアウト
-   - Sourcetree の `Merge` で `develop` を取り込む
-   - コンフリクトが出たらお使いのエディタ（例：VS Code）で `practice.md` を整える
-   - 解決コミット → `Push`（feature/conflict-bへ）
-6. PR（B）がマージ可能になったらマージ
-7. ローカル `develop` を `Pull` して完了
+1. `develop` をチェックアウト → `Pull`
+2. `practice.md` を作成し `LINE: original` と書く → コミット → `Push`（develop へ）
 
-**合格条件**
-- PR（B）で `Conflicts` が出た状態から、自分で解決して `Merged` まで到達できた
-- 解決コミットが `feature/conflict-b` に積まれている（履歴で確認できる）
+### 手順
 
-**提出物（メンターに出すなら）**
-- PR（A）とPR（B）のURL
-- PR（B）で追加した「解決コミット」のメッセージ（例：`Resolve conflict in practice.md`）
-- PR（B）が最終的に `Merged` になったこと
+1. `develop` から `feature/conflict-a` を作成
+2. `practice.md` の内容を `LINE: from A` に変更 → コミット → プッシュ → PR（A）を作成
+3. `develop` から `feature/conflict-b` を作成
+4. `practice.md` の内容を `LINE: from B` に変更 → コミット → プッシュ → PR（B）を作成
+5. PR（A）を先にマージ
+6. PR（B）に `Conflicts` が出るので、上記の手順で解決
+7. PR（B）もマージ
+8. ローカル `develop` を `Pull`
 
-## 7. チェックリスト（理解確認）
-- [ ] コンフリクトが起きる理由を説明できる。
-- [ ] Sourcetree でコンフリクトの状態を見分けられる。
-- [ ] エディタで解決してコミットまでできる。
+### 合格条件
+
+- PR（B）で Conflicts を自分で解決して `Merged` まで到達できた
+- 解決コミットが `feature/conflict-b` の履歴に見える
+
+## 10. チェックリスト
+
+- [ ] コンフリクトが起きる理由を説明できる
+- [ ] エディタでコンフリクトを解決してコミットできた
+- [ ] PR の Conflicts を自力で解消できた
 
 ---
 

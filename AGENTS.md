@@ -13,7 +13,7 @@
 
 ## コーディングスタイルと命名規則
 - Markdown: 各レッスンは単一の H1（`# ...`）から開始し、対応する `index.json` の `items[].title` と整合させます。コードブロックは言語タグ付きのフェンス形式（例: `bash`）を使います。
-- ファイル名: `chapters/NN-topic-name.md`（2桁番号 + kebab-case、例: `chapters/02-task-submission-cycle.md`）。
+- ファイル名: `chapters/NN-topic-name.md`（2桁番号 + kebab-case、例: `chapters/02-first-commit.md`）。
 - ID: `chapters[].id` は `unitN`、`items[].id` は `kebab-case` で、カリキュラム内で一意にします。
 - JSON: 厳密な JSON のみ（コメント不可、末尾カンマ不可）。インデントは 2 スペース、文字列はダブルクォート、末尾改行を維持します。
 
