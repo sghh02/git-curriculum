@@ -1,12 +1,19 @@
 {
   "curriculumId": "git-curriculum",
   "title": "Git / GitHub 基礎（Sourcetree版）",
-  "description": "課題提出に直結する Git / GitHub 学習カリキュラム（Sourcetree + Gitflow簡易版）。スキルを1つずつ積み上げ、最後に統合する構成。",
+  "description": "AI時代の問い起点学習を前提に、課題提出に直結するGit/GitHub運用を身につけるカリキュラム（Sourcetree + Gitflow簡易版）。",
   "chapters": [
     {
       "id": "unit0",
-      "title": "Unit 0: イントロダクション",
+      "title": "Unit 0: 学習設計とイントロダクション",
       "items": [
+        {
+          "id": "career-design",
+          "title": "キャリア設計と学習設計",
+          "path": "chapters/00-career-design.md",
+          "estimatedMinutes": 10,
+          "hasAssignment": false
+        },
         {
           "id": "why-git",
           "title": "なぜGitを学ぶのか",
