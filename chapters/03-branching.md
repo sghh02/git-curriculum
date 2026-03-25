@@ -2,6 +2,8 @@
 
 > 提出ブランチ：`feature/03-branching`（PRのbase：`develop`）
 
+> **補足**：本文中の `feature/03-branch-practice` は練習用の例です。章末で提出するときは `feature/03-branching` を使います。
+
 **前提**：前章でコミット・プッシュができること。
 
 ## 1. この章のゴール
@@ -9,6 +11,7 @@
 - `main / develop / feature` の3本の役割を説明できる
 - `develop` から `feature/課題名` を作り、安全に作業できる
 - 「main で直接作業しない理由」を説明できる
+- `engineer-design.md` を安心して改善するために、feature ブランチを使う意味を理解する
 
 ## 2. 用語
 
@@ -64,9 +67,11 @@
 
 前章で学んだ手順と同じです。
 
-1. お使いのエディタ（例：VS Code）で編集 → 保存
+1. お使いのエディタ（例：VS Code）で `engineer-design.md` を編集 → 保存
 2. Sourcetree の `File Status` → ステージング → コミット
 3. `Push`（`feature/03-branch-practice` にチェック → `Push`）
+
+この章では、AIに「別案」を出してもらい、その別案を **安全に試すための作業台** として feature を使う感覚を持てれば十分です。
 
 ### 4-4. マージ後の後片付け
 
@@ -95,13 +100,14 @@ PR がマージされたら（PR の作り方は次章で学びます）：
 「develop が見えない。Branches と Remotes に見えている名前を書くので、何をすべきか教えて」
 「main で作業してしまった。未コミットかコミット済みか確認する方法と、安全な戻し方を教えて」
 「feature/課題名 のブランチ名案を3つ出して」
+「engineer-design.md の “3か月後の到達イメージ” に対して別案を1つ出して。別ブランチで試したい」
 ```
 
 ## 7. ハンズオン課題
 
 1. `develop` をチェックアウトして `Pull`
 2. `develop` から `feature/03-branch-practice` を作成
-3. `README.md` に学習メモを追記 → コミット → プッシュ
+3. `engineer-design.md` の1セクションをAIと相談しながら改善 → コミット → プッシュ
 4. GitHub 上で `feature/03-branch-practice` ブランチが見えることを確認
 
 **合格条件**：GitHub に `feature/03-branch-practice` ブランチが存在し、コミットが積まれている。
@@ -111,6 +117,7 @@ PR がマージされたら（PR の作り方は次章で学びます）：
 - [ ] `main / develop / feature` の役割を説明できる
 - [ ] `develop` から feature を作って作業できた
 - [ ] `main` で作業しない理由を説明できる
+- [ ] 「別案を安全に試すために feature を使う」と説明できる
 
 ---
 

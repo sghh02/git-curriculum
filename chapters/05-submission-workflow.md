@@ -2,12 +2,15 @@
 
 > 提出ブランチ：`feature/05-submission-workflow`（PRのbase：`develop`）
 
+> **補足**：本文中の `feature/05-practice-1` / `feature/05-practice-2` は練習用です。章末で提出するときは `feature/05-submission-workflow` を使います。
+
 **前提**：Unit 2（コミット・ブランチ・PR）をすべて完了していること。
 
 ## 1. この章のゴール
 
 - 1課題の提出フローを、迷わず通しで実行できる
 - 模擬課題を2回通して、ルーティンを体に染み込ませる
+- 同じ成果物をAIと一緒に連続改善し、その履歴を提出できる
 
 ## 2. 1課題の鉄板ルーティン（6ステップ）
 
@@ -35,24 +38,26 @@ PR を作る前に毎回確認してください。
 
 ### ゴール
 
-`feature/05-practice-1` から `develop` に PR を出し、マージ後にローカル `develop` を更新する。
+`feature/05-practice-1` から `develop` に PR を出し、`engineer-design.md` の改善を1回提出する。
 
 ### 手順
 
 1. `develop` をチェックアウト → `Pull`
 2. `develop` から `feature/05-practice-1` を作成
-3. `README.md` に学習メモを追記して保存
-4. ステージング → コミット（例：`05-practice-1: 学習メモを追加`）
-5. `Push`
-6. GitHub で PR を作成（base=`develop`、compare=`feature/05-practice-1`）
-7. PR 本文に「目的・変更点・確認方法」を記入
-8. PR をマージ
-9. ローカルで `develop` をチェックアウト → `Pull`
+3. AIに「自分のエンジニア設計書の曖昧な点」を1つ聞く
+4. `engineer-design.md` の1セクションを改善して保存
+5. ステージング → コミット（例：`05-practice-1: エンジニア像の記述を具体化`）
+6. `Push`
+7. GitHub で PR を作成（base=`develop`、compare=`feature/05-practice-1`）
+8. PR 本文に「目的・変更点・確認方法」を記入
+9. PR をマージ
+10. ローカルで `develop` をチェックアウト → `Pull`
 
 ### 合格条件
 
 - PR が `Merged` になっている
 - ローカル `develop` の `History` にマージ結果が見える
+- `engineer-design.md` の改善が `develop` に取り込まれている
 
 ## 5. 模擬課題2：連続提出（ルーティン定着）
 
@@ -64,17 +69,19 @@ PR を作る前に毎回確認してください。
 
 1. `develop` をチェックアウト → `Pull`（模擬課題1のマージを取り込む）
 2. `develop` から `feature/05-practice-2` を作成
-3. 新しいファイル `notes.md` を作成し、今日の学習の感想を書く
-4. ステージング → コミット（例：`05-practice-2: notes.mdを追加`）
-5. `Push`
-6. GitHub で PR を作成（base=`develop`、compare=`feature/05-practice-2`）
-7. PR 本文を記入 → マージ
-8. ローカル `develop` を `Pull` で更新
+3. AIに「最初の3か月の行動計画をもう少し具体化したい」と相談する
+4. `engineer-design.md` の別セクションを改善する
+5. ステージング → コミット（例：`05-practice-2: 最初の3か月の計画を具体化`）
+6. `Push`
+7. GitHub で PR を作成（base=`develop`、compare=`feature/05-practice-2`）
+8. PR 本文を記入 → マージ
+9. ローカル `develop` を `Pull` で更新
 
 ### 合格条件
 
 - 2つ目の PR も `Merged` になっている
 - ローカル `develop` に両方のマージ結果が見える
+- 同じ `engineer-design.md` に対して、改善を2回連続で提出できた
 
 ## 6. つまずいたら
 
@@ -91,6 +98,7 @@ PR を作る前に毎回確認してください。
 「6ステップのどこで止まってる？（状況：___）次にやることを1つだけ教えて」
 「模擬課題1のPR本文を作って。目的/変更点/確認方法で短く」
 「2つ目の課題を始める前に develop の Pull を忘れた。このまま進めて大丈夫？」
+「engineer-design.md の次に直すべき場所を1つだけ選んで。差分が小さく、PRにしやすい観点で」
 ```
 
 ## 8. チェックリスト
@@ -98,6 +106,7 @@ PR を作る前に毎回確認してください。
 - [ ] 6ステップを見ずに順番通りに実行できる
 - [ ] 提出前チェックリストの項目を説明できる
 - [ ] 2つの模擬課題を連続で完走できた
+- [ ] 同じ成果物を連続改善しても、Gitで混乱せず提出できた
 
 ---
 

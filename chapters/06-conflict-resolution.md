@@ -2,6 +2,8 @@
 
 > 提出ブランチ：`feature/06-conflict-resolution`（PRのbase：`develop`）
 
+> **補足**：本文中の `feature/conflict-a` / `feature/conflict-b` は練習用です。章末で提出するときは `feature/06-conflict-resolution` を使います。
+
 **前提**：第5章まで完了し、課題提出のフローを一通りできること。
 
 ## 1. この章のゴール
@@ -9,6 +11,7 @@
 - コンフリクトが起きる理由を、怖がらずに説明できる
 - お使いのエディタ（例：VS Code）でコンフリクトを解決できる
 - PRで「Conflicts」が出たときに、自力で対処できる
+- 同じ `engineer-design.md` の同じ箇所を別案で直したときに、どちらを残すか判断できる
 
 ## 2. 用語
 
@@ -57,7 +60,7 @@
 
 - Sourcetree に戻る
 - ファイルが `Resolved` になっているか確認（なければ `Mark Resolved` を押す）
-- ステージング → コミット（例：`Resolve conflict in README`）
+- ステージング → コミット（例：`Resolve conflict in engineer-design.md`）
 - 必要なら `Push`
 
 ## 6. PRで「Conflicts」が出たとき
@@ -91,32 +94,65 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 
 ## 9. ハンズオン課題：コンフリクト練習
 
-### 準備
+### フェーズ1：準備
 
 1. `develop` をチェックアウト → `Pull`
-2. `practice.md` を作成し `LINE: original` と書く → コミット → `Push`（develop へ）
+2. `engineer-design.md` に、練習用の見出しを1つ追加する
 
-### 手順
+```md
+## 練習用メモ
+- 最初の一歩：未記入
+```
+
+3. ステージング → コミット（例：`chore: add conflict practice section`）→ `Push`（develop へ）
+
+### フェーズ2：別ブランチで別案を作る
 
 1. `develop` から `feature/conflict-a` を作成
-2. `practice.md` の内容を `LINE: from A` に変更 → コミット → プッシュ → PR（A）を作成
+2. `engineer-design.md` の「練習用メモ」を次のように変更 → コミット → プッシュ → PR（A）を作成
+
+```md
+## 練習用メモ
+- 最初の一歩：毎日30分、GitとGitHubの操作を練習する
+```
+
 3. `develop` から `feature/conflict-b` を作成
-4. `practice.md` の内容を `LINE: from B` に変更 → コミット → プッシュ → PR（B）を作成
+4. `engineer-design.md` の同じ箇所を別の案に変更 → コミット → プッシュ → PR（B）を作成
+
+```md
+## 練習用メモ
+- 最初の一歩：週3回、AIに相談しながら学習計画を見直す
+```
+
 5. PR（A）を先にマージ
 6. PR（B）に `Conflicts` が出るので、上記の手順で解決
 7. PR（B）もマージ
 8. ローカル `develop` を `Pull`
+9. 練習用メモが残っている場合は、不要なら削除して整えるための小さなコミットを追加する
+
+### フェーズ3：解決の考え方
+
+この練習では、「Aだけ残す」「Bだけ残す」でも構いません。  
+ただし実務では、次のように **両方を統合する案** が一番自然なことも多いです。
+
+```md
+## 練習用メモ
+- 最初の一歩：毎日30分、AIに相談しながらGitとGitHubの操作を練習する
+```
 
 ### 合格条件
 
 - PR（B）で Conflicts を自分で解決して `Merged` まで到達できた
 - 解決コミットが `feature/conflict-b` の履歴に見える
+- どちらの案を残すか、またはどう統合したかを説明できる
+- 必要なら練習用メモを後で片付ける、という考え方を説明できる
 
 ## 10. チェックリスト
 
 - [ ] コンフリクトが起きる理由を説明できる
 - [ ] エディタでコンフリクトを解決してコミットできた
 - [ ] PR の Conflicts を自力で解消できた
+- [ ] `engineer-design.md` の別案をどう統合するか判断できた
 
 ---
 
