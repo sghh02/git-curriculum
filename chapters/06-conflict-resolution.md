@@ -97,7 +97,7 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 ### フェーズ1：準備
 
 1. `develop` をチェックアウト → `Pull`
-2. `engineer-design.md` に、練習用の見出しを1つ追加する
+2. `engineer-design.md` の中に、練習用として1か所だけ短いメモを追加する
 
 ```md
 ## 練習用メモ
@@ -109,7 +109,7 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 ### フェーズ2：別ブランチで別案を作る
 
 1. `develop` から `feature/conflict-a` を作成
-2. `engineer-design.md` の「練習用メモ」を次のように変更 → コミット → プッシュ → PR（A）を作成
+2. `engineer-design.md` の「練習用メモ」をA案に変更 → コミット → プッシュ → PR（A）を作成
 
 ```md
 ## 練習用メモ
@@ -117,7 +117,7 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 ```
 
 3. `develop` から `feature/conflict-b` を作成
-4. `engineer-design.md` の同じ箇所を別の案に変更 → コミット → プッシュ → PR（B）を作成
+4. `engineer-design.md` の同じ箇所をB案に変更 → コミット → プッシュ → PR（B）を作成
 
 ```md
 ## 練習用メモ
@@ -130,6 +130,8 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 8. ローカル `develop` を `Pull`
 9. 練習用メモが残っている場合は、不要なら削除して整えるための小さなコミットを追加する
 
+ここで見てほしいのは、「どちらが正解か」よりも、**同じ場所を別々に直すと Git は自動で決められず、最後は人が判断する** という感覚です。
+
 ### フェーズ3：解決の考え方
 
 この練習では、「Aだけ残す」「Bだけ残す」でも構いません。  
@@ -139,6 +141,8 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 ## 練習用メモ
 - 最初の一歩：毎日30分、AIに相談しながらGitとGitHubの操作を練習する
 ```
+
+つまり、コンフリクト解決は「勝ち負けを決める作業」ではなく、**最終的に残したい文章を自分で決める作業** です。
 
 ### 合格条件
 
