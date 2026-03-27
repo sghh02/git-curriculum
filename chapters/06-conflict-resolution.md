@@ -20,7 +20,8 @@
 | **コンフリクト** | 同じファイルの同じ場所を別々の変更が書き換えて、Git が自動で決められない状態 |
 | **コンフリクトマーカー** | `<<<<<<` `======` `>>>>>>` の記号。エディタで解決する目印 |
 
-たとえるなら「二人が同じホワイトボードの同じ行を同時に書き換えた」状態です。怖く見えますが、やることはシンプルです。
+たとえるなら「二人が同じホワイトボードの同じ行を同時に書き換えた」状態です。  
+怖く見えますが、**壊れたのではなく、Git が勝手に決めずに止まってくれている** 状態です。
 
 ## 3. コンフリクト解決の3ステップ
 
@@ -62,6 +63,11 @@
 - ファイルが `Resolved` になっているか確認（なければ `Mark Resolved` を押す）
 - ステージング → コミット（例：`Resolve conflict in engineer-design.md`）
 - 必要なら `Push`
+
+解決後は、次の2点を必ず見ます。
+
+- コンフリクトマーカー（`<<<<<<` など）が本文に残っていない
+- 最終的に残したい文章になっている
 
 ## 6. PRで「Conflicts」が出たとき
 
@@ -106,6 +112,11 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 
 3. ステージング → コミット（例：`chore: add conflict practice section`）→ `Push`（develop へ）
 
+通常の課題では、`develop` へ直接 push するのは基本動線ではありません。  
+ここでは **コンフリクトを再現するための練習準備として、最初の土台を `develop` に置く例外手順** です。
+
+もし `develop` が保護されていて直接 push できない場合は、`feature/conflict-setup` を作って同じ変更を PR で `develop` に取り込んでから進めてください。
+
 ### フェーズ2：別ブランチで別案を作る
 
 1. `develop` から `feature/conflict-a` を作成
@@ -116,7 +127,7 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 - 最初の一歩：毎日30分、GitとGitHubの操作を練習する
 ```
 
-3. `develop` から `feature/conflict-b` を作成
+3. `develop` をもう一度チェックアウトし、**まだ Pull はせず** に `feature/conflict-b` を作成
 4. `engineer-design.md` の同じ箇所をB案に変更 → コミット → プッシュ → PR（B）を作成
 
 ```md

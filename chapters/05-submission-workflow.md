@@ -12,18 +12,26 @@
 - 模擬課題を2回通して、ルーティンを体に染み込ませる
 - 同じ成果物をAIと一緒に連続改善し、その履歴を提出できる
 
+この章は、ここまでに学んだ
+
+- コミット
+- ブランチ
+- PR
+
+を **1本の提出動線にまとめる章** です。
+
 ## 2. 1課題の鉄板ルーティン（6ステップ）
 
 Unit 2 で学んだスキルを1つの流れにまとめます。**毎回この手順で提出します。**
 
-| # | やること | Sourcetree / GitHub |
-|---|---------|-------------------|
-| 1 | `develop` を最新化 | `develop` チェックアウト → `Pull` |
-| 2 | feature を作る | `Branch` → `feature/課題名` → `Checkout new branch` |
-| 3 | 作業 → コミット | エディタで編集 → `File Status` → ステージング → `Commit` |
-| 4 | プッシュ | `Push`（feature にチェック） |
-| 5 | PR を作成 | GitHub → `Pull requests` → base=`develop` / compare=`feature/...` |
-| 6 | マージ後に更新 | `develop` チェックアウト → `Pull` |
+| # | やること | Sourcetree / GitHub | 意味 |
+|---|---------|-------------------|------|
+| 1 | `develop` を最新化 | `develop` チェックアウト → `Pull` | 古い土台から作業しないため |
+| 2 | feature を作る | `Branch` → `feature/課題名` → `Checkout new branch` | 課題ごとの変更を分けるため |
+| 3 | 作業 → コミット | エディタで編集 → `File Status` → ステージング → `Commit` | 変更を履歴として残すため |
+| 4 | プッシュ | `Push`（feature にチェック） | GitHub に提出候補を置くため |
+| 5 | PR を作成 | GitHub → `Pull requests` → base=`develop` / compare=`feature/...` | 変更を説明付きで提出するため |
+| 6 | マージ後に更新 | `develop` チェックアウト → `Pull` | 次の課題の土台を最新にするため |
 
 ## 3. 提出前チェックリスト
 
@@ -33,6 +41,9 @@ PR を作る前に毎回確認してください。
 - [ ] `Staged files` に入れてよい変更だけが入っている
 - [ ] プッシュ済みで、GitHub に `feature/...` が見える
 - [ ] PR の base が `develop`
+
+迷ったときは、「いま自分はこの6ステップのどこまで終わったか」を確認してください。  
+次にやることは、たいてい1つに絞れます。
 
 ## 4. 模擬課題1：基本フロー（通し練習）
 
