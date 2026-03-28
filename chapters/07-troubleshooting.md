@@ -86,15 +86,27 @@ PR が作れないときは、「Push まで終わっているか」を先に見
 
 ### 表示の読み替え（英語 / 日本語）
 
+Sourcetree や GitHub は、OS やバージョンで日本語訳が少し違うことがあります。  
+完全に同じ文字列を探すより、**意味で近い表示を探す** のが安全です。
+
 | 英語 | 日本語 |
 |------|--------|
+| `Clone` | クローン |
 | `File Status` | ファイルステータス |
 | `History` | 履歴 |
 | `Commit` | コミット |
 | `Branch` | ブランチ |
+| `Branches` | ブランチ一覧 |
+| `Checkout` | チェックアウト / 切り替え |
+| `Checkout new branch` | 新しいブランチを作成して切り替え |
 | `Merge` | マージ |
 | `Pull` / `Push` | プル / プッシュ |
 | `Remotes` | リモート |
+| `Unstaged files` | まだステージしていない変更 |
+| `Staged files` | ステージ済みの変更 |
+| `Pull requests` | プルリクエスト |
+| `Create pull request` | プルリクエストを作成 |
+| `Files changed` | 変更ファイル / 変更差分 |
 
 ### Sourcetree の画面構成
 
