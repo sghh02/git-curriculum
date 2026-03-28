@@ -45,18 +45,18 @@
           "title": "はじめてのコミットとプッシュ",
           "path": "chapters/02-first-commit.md",
           "estimatedMinutes": 60,
-          "hasAssignment": true
+          "hasAssignment": false
         },
         {
           "id": "branching",
           "title": "ブランチで安全に作業する",
           "path": "chapters/03-branching.md",
           "estimatedMinutes": 60,
-          "hasAssignment": true
+          "hasAssignment": false
         },
         {
           "id": "pull-request",
-          "title": "PRで課題を提出する",
+          "title": "PRで提出してマージする",
           "path": "chapters/04-pull-request.md",
           "estimatedMinutes": 60,
           "hasAssignment": true

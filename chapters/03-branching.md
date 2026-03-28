@@ -1,8 +1,8 @@
 # ブランチで安全に作業する
 
-> 提出ブランチ：`feature/03-branching`（PRのbase：`develop`）
+> 練習ブランチ例：`feature/03-branch-practice`
 
-> **補足**：本文中の `feature/03-branch-practice` は練習用の例です。章末で提出するときは `feature/03-branching` を使います。
+> **補足**：この章では、`feature/03-branch-practice` を例にして練習します。
 
 **前提**：前章でコミット・プッシュができること。
 
@@ -130,11 +130,7 @@ PR がマージされたら（PR の作り方は次章で学びます）：
 
 ---
 
-## 課題提出
+## 完了記録
 
-この章には提出課題があります。
-
-1. 上記のハンズオン課題を完了する
-2. GitHub で `feature/03-branching` ブランチを作成し、PRを作成
-3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
-4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+この章には提出課題はありません。
+学習が完了したら、スプレッドシートに **完了日** のみ記入してください。
