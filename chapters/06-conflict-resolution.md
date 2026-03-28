@@ -178,4 +178,4 @@ GitHub の PR 画面に `This branch has conflicts` と出たら、「`develop` 
 1. 上記のハンズオン課題を完了する
 2. GitHub で `feature/06-conflict-resolution` ブランチを作成し、PRを作成
 3. [AI総合レビューツール](https://ai.studio/apps/drive/1AMqIqU4Bio4te7AWh5dly1Qzp7CesqP9?fullscreenApplet=true) でレビューを実行
-4. 問題がなければ、スプレッドシートに **PR URL** と **完了日** を記入
+4. 問題がなければ、進捗ダッシュボードで **PR URL** と **完了日** を記録
