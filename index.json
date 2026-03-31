@@ -1,7 +1,7 @@
 {
   "curriculumId": "git-curriculum",
   "title": "Git / GitHub 基礎（Sourcetree版）",
-  "description": "AI時代の問い起点学習を前提に、課題提出に直結するGit/GitHub運用を身につけるカリキュラム（Sourcetree + Gitflow簡易版）。",
+  "description": "AI時代の問い起点学習を前提に、課題提出に直結するGit/GitHub運用を身につけるプログラム（Sourcetree + Gitflow簡易版）。",
   "chapters": [
     {
       "id": "unit0",

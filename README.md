@@ -1,6 +1,6 @@
 # git-curriculum
 
-Git / GitHub 学習用カリキュラム（Markdown）です。`index.json` が目次・メタ情報、`chapters/` が本文になります。
+Git / GitHub 学習用プログラム（Markdown）です。`index.json` が目次・メタ情報、`chapters/` が本文になります。
 初心者向けに **Sourcetree（GUI）+ VS Code** を前提にし、スクリーンショット無しでも進められるよう文章だけで手順を説明しています。
 
 ## Validate
@@ -13,5 +13,5 @@ node scripts/validate-index.mjs
 
 ## Structure
 
-- `index.json`: カリキュラム構造（Unit/lesson）
+- `index.json`: プログラム構造（Unit/lesson）
 - `chapters/*.md`: レッスン本文
