@@ -9,14 +9,14 @@
       "items": [
         {
           "id": "career-design",
-          "title": "キャリア設計と学習設計",
+          "title": "第0章: キャリア設計と学習設計",
           "path": "chapters/00-career-design.md",
           "estimatedMinutes": 10,
           "hasAssignment": false
         },
         {
           "id": "why-git",
-          "title": "なぜGitを学ぶのか",
+          "title": "第1章: なぜGitを学ぶのか",
           "path": "chapters/00-why-git.md",
           "estimatedMinutes": 15,
           "hasAssignment": false
@@ -29,7 +29,7 @@
       "items": [
         {
           "id": "setup",
-          "title": "環境構築（Sourcetree + GitHub）",
+          "title": "第2章: 環境構築（Sourcetree + GitHub）",
           "path": "chapters/01-setup.md",
           "estimatedMinutes": 90,
           "hasAssignment": false
@@ -42,21 +42,21 @@
       "items": [
         {
           "id": "first-commit",
-          "title": "はじめてのコミットとプッシュ",
+          "title": "第3章: はじめてのコミットとプッシュ",
           "path": "chapters/02-first-commit.md",
           "estimatedMinutes": 60,
           "hasAssignment": false
         },
         {
           "id": "branching",
-          "title": "ブランチで安全に作業する",
+          "title": "第4章: ブランチで安全に作業する",
           "path": "chapters/03-branching.md",
           "estimatedMinutes": 60,
           "hasAssignment": false
         },
         {
           "id": "pull-request",
-          "title": "PRで提出してマージする",
+          "title": "第5章: PRで提出してマージする",
           "path": "chapters/04-pull-request.md",
           "estimatedMinutes": 60,
           "hasAssignment": true
@@ -69,14 +69,14 @@
       "items": [
         {
           "id": "submission-workflow",
-          "title": "課題提出ワークフロー",
+          "title": "第6章: 課題提出ワークフロー",
           "path": "chapters/05-submission-workflow.md",
           "estimatedMinutes": 90,
           "hasAssignment": true
         },
         {
           "id": "conflict-resolution",
-          "title": "コンフリクトの理解と解決",
+          "title": "第7章: コンフリクトの理解と解決",
           "path": "chapters/06-conflict-resolution.md",
           "estimatedMinutes": 70,
           "hasAssignment": true
@@ -89,7 +89,7 @@
       "items": [
         {
           "id": "troubleshooting",
-          "title": "トラブルシューティング＆クイックリファレンス",
+          "title": "第8章: トラブルシューティング＆クイックリファレンス",
           "path": "chapters/07-troubleshooting.md",
           "estimatedMinutes": 20,
           "hasAssignment": false

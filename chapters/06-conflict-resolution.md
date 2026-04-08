@@ -1,10 +1,10 @@
-# コンフリクトの理解と解決
+# 第7章: コンフリクトの理解と解決
 
 > 提出ブランチ：`feature/06-conflict-resolution`（PRのbase：`develop`）
 
 > **補足**：本文中の `feature/conflict-a` / `feature/conflict-b` は練習用です。章末で提出するときは `feature/06-conflict-resolution` を使います。
 
-**前提**：第5章まで完了し、課題提出のフローを一通りできること。
+**前提**：第6章まで完了し、課題提出のフローを一通りできること。
 
 ## 1. この章のゴール
 

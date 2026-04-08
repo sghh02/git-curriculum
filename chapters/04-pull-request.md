@@ -1,4 +1,4 @@
-# PRで提出してマージする
+# 第5章: PRで提出してマージする
 
 > 提出ブランチ：`feature/04-pull-request`（PRのbase：`develop`）
 
@@ -177,7 +177,7 @@ PR は作り直さなくてOKです。
 |------|------|
 | base が `main` になっている | ドロップダウンで `develop` に変更 |
 | GitHub に `feature/...` が出ない | Sourcetree で `Push` できているか確認 |
-| PR に「Conflicts」と出た | 第6章で解決方法を学びます |
+| PR に「Conflicts」と出た | 第7章で解決方法を学びます |
 
 ## 5. AIに聞いてみよう
 
