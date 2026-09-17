@@ -126,14 +126,16 @@ Sourcetree や GitHub は、OS やバージョンで日本語訳が少し違う�
 | コミットを取り消す | `History` → 右クリック → `Reverse commit` / `Revert` |
 | コンフリクト解決 | `File Status` → `Resolve Conflicts`（詳細：第7章） |
 
-### 課題提出の6ステップ（毎回これ）
+### 課題提出の8ステップ（毎回これ）
 
 1. `develop` チェックアウト → `Pull`
 2. `Branch` → `feature/課題名` 作成
 3. 編集（例：`engineer-design.md` の1文を具体化）→ ステージング → `Commit`
 4. `Push`
 5. GitHub で PR（base=`develop`）
-6. マージ後 → `develop` を `Pull`
+6. 章の下の **PRレビュー** を実行
+7. レビューコメントをすべてコピーして、PR のコメントに貼る
+8. マージ後 → `develop` を `Pull`
 
 ### GitHub でよく使う場所
 
