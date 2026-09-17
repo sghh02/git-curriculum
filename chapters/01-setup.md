@@ -77,7 +77,7 @@ AI に頼むときは、**参照元を限定する** のが大事です。
 
 1. 右上の `+` → `New repository`
 2. `Repository name`：例 `git-learning`
-3. `Public / Private`：Public 推奨（AIレビューが参照できるように）。事情があればメンターに確認
+3. `Public / Private`：**Public にする**（Private だと PRレビューが差分を取得できません）
 4. `Add a README file` を **必ず ON**
 5. `Create repository`
 
